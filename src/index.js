@@ -7,6 +7,8 @@ import BlogPost from './Components/blogpost';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+document.title = 'Kaushal Sharma Blog'
+
 root.render(
   <React.StrictMode>
     <Router>

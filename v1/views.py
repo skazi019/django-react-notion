@@ -44,8 +44,41 @@ def getDatabase(request):
 def getPage(request, id):
     notion = Client(auth=os.environ.get("NOTION_TOKEN"))
     notionPage = notion.pages.retrieve(page_id=id)
+
     return Response(
-        data=notionPage,
+        data={
+            "page_properties": notionPage,
+        },
+        status=status.HTTP_200_OK,
+        content_type="application/json",
+    )
+
+
+@api_view(["GET"])
+def getBlocks(request, id):
+    notion = Client(auth=os.environ.get("NOTION_TOKEN"))
+    cursor = None
+    blocks: list = []
+    keepLooping: bool = True
+
+    while keepLooping:
+        res = notion.blocks.children.list(
+            **{
+                "block_id": id,
+                "start_cursor": cursor,
+            }
+        )
+        result, next_cursor = res["results"], res["next_cursor"]
+        blocks.extend(result)
+        if not next_cursor:
+            keepLooping = False
+        else:
+            cursor = next_cursor
+
+    return Response(
+        data={
+            "page_contents": blocks,
+        },
         status=status.HTTP_200_OK,
         content_type="application/json",
     )

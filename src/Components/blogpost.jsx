@@ -1,43 +1,47 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useArticleStore from '../store';
+import { TailSpin } from 'react-loader-spinner';
+import Post from './post';
+
 
 export default function BlogPost(props) {
     const data = useParams();
+    document.title = data.slug;
 
-    const { slugId, getIdFromSlug } = useArticleStore((state) => ({
+    const [isLoading, setLoading] = useState(true);
+
+    const { page, getPageFromSlug } = useArticleStore((state) => ({
         slugId: state.slugId,
-        getIdFromSlug: state.getIdFromSlug,
+        page: state.page,
+        setPage: state.setPage,
+        getPageFromSlug: state.getPageFromSlug,
     }));
 
-    function getPage() {
-        const id = slugId.id;
-        fetch(process.env.REACT_APP_BACKEND_URI + '/get-page/' + id,
-            {
-                method: "GET",
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                    "Accept": "application/json",
-                }
-            }
-        )
-            .then(async (response) => {
-                const res = await response.json();
-                console.log(res)
-            })
-    }
 
     useEffect(() => {
-        getIdFromSlug(data.slug);
-        getPage()
+        getPageFromSlug(data.slug);
+        setLoading(false);
     }, [])
 
 
     return (
-        <section>
-            Slug: {data.slug} <br />
-            Id: {slugId.id}
-        </section>
-    );
+        <>
+            {
+                isLoading ?
+                    <TailSpin
+                        height="80"
+                        width="80"
+                        color="#4fa94d"
+                        ariaLabel="tail-spin-loading"
+                        radius="1"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                    /> :
+                    <Post page={page} />
+            }
+
+        </>
+    )
 }

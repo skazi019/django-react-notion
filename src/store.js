@@ -1,18 +1,28 @@
 import create from 'zustand'
 import { devtools, persist } from 'zustand/middleware';
 
-
 const articleStore = (set) => ({
     articles: [],
-    slugId: {},
+    page: {},
+    blocks: [],
     setArticles: (allArticles) => {
         set((state) => ({
             articles: allArticles
         }))
     },
-    getIdFromSlug: (slug) => {
+    setPage: (notionPage) => {
         set((state) => ({
-            slugId:
+            page: notionPage
+        }))
+    },
+    setBlocks: (notionBlocks) => {
+        set((state) => ({
+            blocks: notionBlocks
+        }))
+    },
+    getPageFromSlug: (slug) => {
+        set((state) => ({
+            page:
                 state.articles.find(function (post) {
                     const blogItem = post.properties.slug.rich_text[0].plain_text === slug
                     if (blogItem) {
