@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
 import useArticleStore from '../store';
-import styles from "../post.module.css";
 import { TailSpin } from 'react-loader-spinner';
 import Text from "./NotionComponents/text";
 import { renderBlock } from "./renderblock";
@@ -35,6 +34,9 @@ export default function Post({ page }) {
     useEffect(() => {
         getBlocks(page.id);
         setLoading(false);
+        return () => {
+            setBlocks([])
+        }
     }, [])
 
 
@@ -54,7 +56,7 @@ export default function Post({ page }) {
                     /> :
                     <>
                         <main>
-                            <article className={styles.container}>
+                            <article className='max-w-2xl mx-auto'>
                                 <h1 className="text-4xl">
                                     <Text text={page.properties.title.title} />
                                 </h1>

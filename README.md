@@ -60,4 +60,4 @@ Due to this there's not much to be done in the backend, just calling the officia
 - [ ] Hover states
 - [ ] anchor or link style and hover
 - [ ] custom pulse loader for blog list and pos
-- [ ] previous post is there in dom when loading new post
+- [X] previous post is there in dom when loading new post

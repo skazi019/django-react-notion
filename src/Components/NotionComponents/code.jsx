@@ -11,7 +11,7 @@ export default function Code(props) {
     return (
         <div className='my-4 flex flex-col justify-center items-left'>
             <figcaption>
-                <Paragraph text={caption} extraClasses="italic text-sm" />
+                <Paragraph text={caption} extraClasses="italic text-sm text-gray-400" />
             </figcaption>
             <SyntaxHighlighter language={language} style={atomOneDark} className='rounded-md'>
                 {code}
