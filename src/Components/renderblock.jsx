@@ -1,6 +1,3 @@
-import React, { Fragment } from "react";
-import { Link } from 'react-router-dom'
-import Text from "./NotionComponents/text";
 import Paragraph from './NotionComponents/pararaph';
 import Heading from './NotionComponents/heading';
 import List from "./NotionComponents/lists";
@@ -71,11 +68,9 @@ export const renderBlock = (block) => {
         //         </figure>
         //     );
         case "bookmark":
-            console.log(value)
             const href = value.url
             return <Bookmark text={value.caption} url={href} />
         case "column_list":
-            console.log(value)
             return null
         case "callout":
             return <Callout text={value.rich_text} color={value.color} />

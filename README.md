@@ -56,3 +56,4 @@ Due to this there's not much to be done in the backend, just calling the officia
 - [ ] make proper padding for all blocks
 - [ ] Add a search bar
 - [ ] paginate the blogs lists
+- [ ] Display video(youtube, loom etc)

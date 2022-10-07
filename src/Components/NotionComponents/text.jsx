@@ -25,7 +25,7 @@ export default function Text(props) {
                         )
                     } else {
                         return (
-                            <span key={id}
+                            <span id={id}
                                 className={`${extraClasses} ${bold ? 'font-semibold' : ''} ${code ? 'bg-gray-200 px-1 rounded text-red-500' : ''} ${italic ? 'italic' : ''} ${strikethrough ? 'line-through' : ''} ${underline ? 'underline underline-offset-4' : ''} ${color ? 'text-' + color : ''}`}
                             >
                                 {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}

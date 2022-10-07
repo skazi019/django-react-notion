@@ -7,9 +7,10 @@ export default function Code(props) {
     const code = props.code;
     const language = props.language;
     const caption = props.caption;
+    const extraClasses = props.extraClasses
 
     return (
-        <div className='flex flex-col justify-center items-left'>
+        <div className='my-4 flex flex-col justify-center items-left'>
             <Paragraph text={caption} extraClasses="italic text-sm" />
             <SyntaxHighlighter language={language} style={atomOneDark} className='rounded-md'>
                 {code}

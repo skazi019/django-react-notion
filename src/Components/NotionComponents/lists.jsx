@@ -17,13 +17,6 @@ export default function List(props) {
                         </li>
                     </ul>
                 )
-            // return (
-            //     <ol className='list-decimal'>
-            //         <li>
-            //             <Text text={text} />
-            //         </li>
-            //     </ol>
-            // )
             default:
                 return null
         }
@@ -31,8 +24,8 @@ export default function List(props) {
     }
 
     return (
-        <>
+        <div className={`px-8`}>
             {listTag(type, text)}
-        </>
+        </div>
     );
 }
