@@ -51,9 +51,13 @@ Due to this there's not much to be done in the backend, just calling the officia
 
 # TODO
 
-- [ ] handle the lists ul and ol
+- [X] handle the lists ul and ol
 - [ ] handle has_children for block in python code so i can show childrens in nested lists or toggle 
-- [ ] make proper padding for all blocks
+- [X] make proper padding for all blocks
 - [ ] Add a search bar
 - [ ] paginate the blogs lists
 - [ ] Display video(youtube, loom etc)
+- [ ] Hover states
+- [ ] anchor or link style and hover
+- [ ] custom pulse loader for blog list and pos
+- [ ] previous post is there in dom when loading new post

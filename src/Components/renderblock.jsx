@@ -44,7 +44,7 @@ export const renderBlock = (block) => {
         case "divider":
             return <hr key={id} />;
         case "quote":
-            return <Quote text={value.rich_text} id={id} />
+            return <Quote text={value.rich_text} id={id} color={value.color} />
         case "code":
             const language = value.language;
             const code = value.rich_text[0].plain_text;
