@@ -5,7 +5,7 @@
 <br />
 
 ### Table of Contents
-- [Why build this project?](#why-build-this-project)
+- [Motivation](#motivation)
 - [Why is backend required? Why not just build it in React?](#why-is-backend-required-why-not-just-build-it-in-react)
 - [Techstack](#techstack)
     - [Why React?](#why-react)
@@ -18,7 +18,7 @@
 
 <br />
 
-# Why build this project?
+# Motivation 
 - Wanted to build a blog but wanted easy access to write and publish with out getting into code again and again
 - use notion everyday so it was best option for me instead of getting into a CMS or headless CMS
 - went through other notion page renderers like react-notion-x and react-notion but they each were opinionated on how they called the official apis rather than using the apis as is
@@ -51,6 +51,7 @@ Due to this there's not much to be done in the backend, just calling the officia
 
 # TODO
 
+- [ ] handle the lists ul and ol
 - [ ] handle has_children for block in python code so i can show childrens in nested lists or toggle 
 - [ ] make proper padding for all blocks
 - [ ] Add a search bar
