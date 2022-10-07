@@ -26,9 +26,9 @@ export default function Text(props) {
                     } else {
                         return (
                             <span id={id}
-                                className={`${extraClasses} ${bold ? 'font-semibold' : ''} ${code ? 'bg-gray-200 px-1 rounded text-red-500' : ''} ${italic ? 'italic' : ''} ${strikethrough ? 'line-through' : ''} ${underline ? 'underline underline-offset-4' : ''} ${color ? 'text-' + color : ''}`}
+                                className={`${extraClasses} ${bold ? 'font-semibold' : ''} ${code ? 'bg-gray-200 px-1 rounded text-red-500' : ''} ${italic ? 'italic' : ''} ${strikethrough ? 'line-through' : ''} ${underline ? 'underline underline-offset-2' : ''} ${color ? 'text-' + color : ''}`}
                             >
-                                {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
+                                {text.link ? <a href={text.link.url} target='_blank' rel="noreferrer" className='text-gray-400 underline underline-offset-2'>{text.content}</a> : text.content}
                             </span>
                         );
                     }

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useArticleStore from '../store';
-import { TailSpin } from 'react-loader-spinner';
 import Post from './post';
+import PostLoader from './postloader';
 
 
 export default function BlogPost(props) {
@@ -29,16 +29,12 @@ export default function BlogPost(props) {
         <>
             {
                 isLoading ?
-                    <TailSpin
-                        height="80"
-                        width="80"
-                        color="#4fa94d"
-                        ariaLabel="tail-spin-loading"
-                        radius="1"
-                        wrapperStyle={{}}
-                        wrapperClass=""
-                        visible={true}
-                    /> :
+                    <main>
+                        <section className='max-w-2xl mx-auto my-20'>
+                            <PostLoader />
+                        </section>
+                    </main>
+                    :
                     <Post page={page} />
             }
 

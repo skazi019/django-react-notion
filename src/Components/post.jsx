@@ -1,8 +1,8 @@
 import { Fragment, useEffect, useState } from "react";
 import useArticleStore from '../store';
-import { TailSpin } from 'react-loader-spinner';
 import Text from "./NotionComponents/text";
 import { renderBlock } from "./renderblock";
+import PostLoader from "./postloader";
 
 
 export default function Post({ page }) {
@@ -35,7 +35,7 @@ export default function Post({ page }) {
         getBlocks(page.id);
         setLoading(false);
         return () => {
-            setBlocks([])
+            setBlocks([]);
         }
     }, [])
 
@@ -44,23 +44,19 @@ export default function Post({ page }) {
         <>
             {
                 isLoading ?
-                    <TailSpin
-                        height="80"
-                        width="80"
-                        color="#4fa94d"
-                        ariaLabel="tail-spin-loading"
-                        radius="1"
-                        wrapperStyle={{}}
-                        wrapperClass=""
-                        visible={true}
-                    /> :
+                    <main>
+                        <section className='max-w-2xl mx-auto my-20'>
+                            <PostLoader />
+                        </section>
+                    </main>
+                    :
                     <>
                         <main>
-                            <article className='max-w-2xl mx-auto'>
+                            <article className='max-w-2xl mx-auto my-20'>
                                 <h1 className="text-4xl">
                                     <Text text={page.properties.title.title} />
                                 </h1>
-                                <section>
+                                <section className="mt-4">
                                     {blocks.map((block, key) => (
                                         <Fragment key={block.id}>{renderBlock(block)}</Fragment>
                                     ))}

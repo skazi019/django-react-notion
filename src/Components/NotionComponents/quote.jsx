@@ -6,7 +6,8 @@ export default function Quote(props) {
     const color = props.color
 
     const colorToClass = {
-        "gray": "bg-neutral-100 text-gray-500 border-l-4 border-gray-500",
+        "default": "bg-neutral-100 text-gray-800 border-l-4 border-gray-600",
+        "gray": "bg-neutral-100 text-gray-800 border-l-4 border-gray-600",
         "brown": "bg-amber-100 text-amber-500 border-l-4 border-amber-500",
         "orange": "bg-orange-100 text-orange-500 border-l-4 border-orange-500",
         "yellow": "bg-yellow-100 text-yellow-500 border-l-4 border-yellow-500",
@@ -15,7 +16,7 @@ export default function Quote(props) {
         "purple": "bg-purple-100 text-purple-500 border-l-4 border-purple-500",
         "pink": "bg-pink-100 text-pink-500 border-l-4 border-pink-500",
         "red": "bg-red-100 text-red-500 border-l-4 border-red-500",
-        "gray_background": "bg-neutral-100 text-gray-500 border-l-4 border-gray-500",
+        "gray_background": "bg-neutral-100 text-gray-800 border-l-4 border-gray-600",
         "brown_background": "bg-amber-100 text-amber-500 border-l-4 border-amber-500",
         "orange_background": "bg-orange-100 text-orange-500 border-l-4 border-orange-500",
         "yellow_background": "bg-yellow-100 text-yellow-500 border-l-4 border-yellow-500",

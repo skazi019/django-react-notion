@@ -7,6 +7,7 @@ import Todo from "./NotionComponents/todo";
 import Callout from "./NotionComponents/callout";
 import Bookmark from "./NotionComponents/bookmark";
 import Image from "./NotionComponents/image";
+import Video from './NotionComponents/video';
 
 export const renderBlock = (block) => {
     const { type, id } = block;
@@ -24,23 +25,20 @@ export const renderBlock = (block) => {
             return <List text={value.rich_text} type={type} />
         case "to_do":
             return <Todo text={value.rich_text} id={id} checked={value.checked} />
-        // case "toggle":
-        //     return (
-        //         <details>
-        //             <summary>
-        //                 <Text text={value.rich_text} />
-        //             </summary>
-        //             {value.children?.map((block) => (
-        //                 <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-        //             ))}
-        //         </details>
-        //     );
         case "child_page":
             return <p>{value.title}</p>;
         case "image":
             const src = value.type === "external" ? value.external.url : value.file.url;
             const caption = value.caption ? value.caption[0]?.plain_text : null;
             return <Image src={src} caption={caption} />
+        case "video":
+            console.log(value)
+            const videoSrc = value.type === "file" ? value.file.url : value.external.url;
+            const videoCaption = value.caption ? value.caption : null;
+            if (value.type === 'external') {
+                return <Bookmark url={videoSrc} text={videoCaption} />
+            }
+            return <Video src={videoSrc} caption={videoCaption} />
         case "divider":
             return <hr key={id} />;
         case "quote":
@@ -50,23 +48,6 @@ export const renderBlock = (block) => {
             const code = value.rich_text[0].plain_text;
             const codeCaption = value.caption;
             return <Code language={language} code={code} caption={codeCaption} />
-        // case "file":
-        //     const src_file =
-        //         value.type === "external" ? value.external.url : value.file.url;
-        //     const splitSourceArray = src_file.split("/");
-        //     const lastElementInArray = splitSourceArray[splitSourceArray.length - 1];
-        //     const caption_file = value.caption ? value.caption[0]?.plain_text : "";
-        //     return (
-        //         <figure>
-        //             <div >
-        //                 📎{" "}
-        //                 <Link href={src_file} passHref>
-        //                     {lastElementInArray.split("?")[0]}
-        //                 </Link>
-        //             </div>
-        //             {caption_file && <figcaption>{caption_file}</figcaption>}
-        //         </figure>
-        //     );
         case "bookmark":
             const href = value.url
             return <Bookmark text={value.caption} url={href} />

@@ -57,6 +57,10 @@ I use it everyday from planning and todos to notes and content and now, even blo
     ```shell
     pip install pipenv
     ``` 
+    OR
+    ```shell
+    pip3 install pipenv
+    ```
 - Create the virtual environment
     ```shell
     pipenv shell
@@ -86,15 +90,28 @@ I use it everyday from planning and todos to notes and content and now, even blo
 
 # Deployment
 
+# Unsuppported Blocks
+ - Columns
+ - Toggle
+ - Table
+ - File
+
 # TODO
 
 - [X] handle the lists ul and ol
 - [ ] handle has_children for block in python code so i can show childrens in nested lists or toggle 
 - [X] make proper padding for all blocks
 - [ ] Add a search bar
+- [ ] Sort filter by date
+- [ ] tab filter by tags
 - [ ] paginate the blogs lists
-- [ ] Display video(youtube, loom etc)
+- [X] Display video(youtube, loom etc)
 - [ ] Hover states
-- [ ] anchor or link style and hover
-- [ ] custom pulse loader for blog list and pos
+- [X] anchor style 
+- [X] custom pulse loader for blog list and pos
 - [X] previous post is there in dom when loading new post
+- [ ] image fullscreen
+- [X] Error response in backend
+- [X] Date in blog list view
+- [ ] mobile responsiveness 
+- [ ] Navbar (back button)
