@@ -10,8 +10,10 @@ import Image from "./NotionComponents/image";
 import Video from './NotionComponents/video';
 
 export const renderBlock = (block) => {
-    const { type, id } = block;
+    const { type, id, has_children } = block;
     const value = block[type];
+
+    const children = has_children ? block.children : null;
 
     switch (type) {
         case "paragraph":
@@ -22,7 +24,7 @@ export const renderBlock = (block) => {
             return <Heading text={value.rich_text} type={type} />
         case "bulleted_list_item":
         case "numbered_list_item":
-            return <List text={value.rich_text} type={type} />
+            return <List text={value.rich_text} type={type} children={children} />
         case "to_do":
             return <Todo text={value.rich_text} id={id} checked={value.checked} />
         case "child_page":

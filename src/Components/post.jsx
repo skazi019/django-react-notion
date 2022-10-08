@@ -1,13 +1,12 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, Suspense } from "react";
 import useArticleStore from '../store';
 import Text from "./NotionComponents/text";
 import { renderBlock } from "./renderblock";
 import PostLoader from "./postloader";
+import Navbar from "./navbar";
 
 
 export default function Post({ page }) {
-
-    const [isLoading, setLoading] = useState(true);
 
     const { blocks, setBlocks } = useArticleStore((state) => ({
         blocks: state.blocks,
@@ -33,7 +32,6 @@ export default function Post({ page }) {
 
     useEffect(() => {
         getBlocks(page.id);
-        setLoading(false);
         return () => {
             setBlocks([]);
         }
@@ -41,30 +39,20 @@ export default function Post({ page }) {
 
 
     return (
-        <>
-            {
-                isLoading ?
-                    <main>
-                        <section className='max-w-2xl mx-auto my-20'>
-                            <PostLoader />
-                        </section>
-                    </main>
-                    :
-                    <>
-                        <main>
-                            <article className='max-w-2xl mx-auto my-20'>
-                                <h1 className="text-4xl">
-                                    <Text text={page.properties.title.title} />
-                                </h1>
-                                <section className="mt-4">
-                                    {blocks.map((block, key) => (
-                                        <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-                                    ))}
-                                </section>
-                            </article>
-                        </main>
-                    </>
-            }
-        </>
+        <Suspense fallback={<PostLoader />}>
+            <Navbar />
+            <main>
+                <article className='my-20 px-6 mx-auto md:max-w-2xl md:px-0 lg:max-w-2xl'>
+                    <h1 className="text-4xl">
+                        <Text text={page.properties.title.title} />
+                    </h1>
+                    <section className="mt-4">
+                        {blocks.map((block, key) => (
+                            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+                        ))}
+                    </section>
+                </article>
+            </main>
+        </Suspense>
     );
 }

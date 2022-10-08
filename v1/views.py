@@ -94,6 +94,13 @@ def getBlocks(request, id):
                 keepLooping = False
             else:
                 cursor = next_cursor
+        for index, block in enumerate(blocks):
+            if block["has_children"]:
+                res = notion.blocks.children.list(block_id=block["id"])
+                block["children"] = res["results"]
+                # blocks.insert(index+1, res["results"])
+                # Extending the new list of block after the parent block in the blocks list
+                # blocks[index+1:index+1] = res["results"]
     except Exception as e:
         return Response(
             data={

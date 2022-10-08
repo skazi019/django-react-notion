@@ -95,11 +95,12 @@ I use it everyday from planning and todos to notes and content and now, even blo
  - Toggle
  - Table
  - File
+ - Numrical nested lists
 
 # TODO
 
 - [X] handle the lists ul and ol
-- [ ] handle has_children for block in python code so i can show childrens in nested lists or toggle 
+- [X] handle has_children for block in python code so i can show childrens in nested lists or toggle 
 - [X] make proper padding for all blocks
 - [ ] Add a search bar
 - [ ] Sort filter by date
@@ -113,5 +114,5 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [ ] image fullscreen
 - [X] Error response in backend
 - [X] Date in blog list view
-- [ ] mobile responsiveness 
-- [ ] Navbar (back button)
+- [X] mobile responsiveness [ ](make back button show on scoll)
+- [X] Navbar (back button)
