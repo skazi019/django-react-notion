@@ -50,6 +50,9 @@ Please note that you can use any backend you want, the backend code is fairly si
 ## Why Notion?
 I use it everyday from planning and todos to notes and content and now, even blogging!
 
+## Main Challenges Faced?
+### Nesting lists till the end(used recursion or DFS)
+
 # Run it Locally
 ## Backend
 - Make sure you have [python3](https://www.python.org/) installed
@@ -98,21 +101,29 @@ I use it everyday from planning and todos to notes and content and now, even blo
  - Numrical nested lists
 
 # TODO
-
+### Functional
 - [X] handle the lists ul and ol
 - [X] handle has_children for block in python code so i can show childrens in nested lists or toggle 
-- [X] make proper padding for all blocks
+- [X] Lists nesting problem; Nesting problem in general
 - [ ] Add a search bar
 - [ ] Sort filter by date
 - [ ] tab filter by tags
 - [ ] paginate the blogs lists
+- [X] previous post is there in dom when loading new post
+- [X] Error response in backend
+- [ ] Post open, shows loading for a split second but the content still takes time to load
+- [ ] Lazy load images
+
+### Visual
+- [X] make proper padding for all blocks
 - [X] Display video(youtube, loom etc)
 - [ ] Hover states
 - [X] anchor style 
 - [X] custom pulse loader for blog list and pos
-- [X] previous post is there in dom when loading new post
 - [ ] image fullscreen
-- [X] Error response in backend
 - [X] Date in blog list view
 - [X] mobile responsiveness [ ](make back button show on scoll)
 - [X] Navbar (back button)
+- [X] Add tags in the blog list view
+- [ ] Paragraph and text color
+- [ ] Add animations

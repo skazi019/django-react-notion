@@ -10,12 +10,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 document.title = 'Kaushal Sharma Blog'
 
 root.render(
-  <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/:slug' element={<BlogPost />} />
-      </Routes>
-    </Router>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Router>
+    <Routes>
+      <Route path='/' element={<App />} />
+      <Route path='/:slug' element={<BlogPost />} />
+    </Routes>
+  </Router>
+  // </React.StrictMode>
 );

@@ -6,30 +6,10 @@ export default function List(props) {
     const text = props.text;
     const type = props.type;
     const children = props.children ? props.children : false;
-    console.log('children are')
-    console.log(children)
 
     const listTag = function (type, text) {
 
         switch (type) {
-            // case 'numbered_list_item':
-            //     return (
-            //         <ol className='list-decimal'>
-            //             <li>
-            //                 <Text text={text} />
-            //                 {
-            //                     children ? (
-            //                         children.map((block, key) => (
-            //                             // <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-            //                             <ol className='text-sm' key={block.id}>{renderBlock(block)}</ol>
-            //                         ))
-            //                     )
-            //                         :
-            //                         null
-            //                 }
-            //             </li>
-            //         </ol>
-            //     )
             case 'numbered_list_item':
             case 'bulleted_list_item':
                 return (

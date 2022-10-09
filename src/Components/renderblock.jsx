@@ -12,12 +12,14 @@ import Video from './NotionComponents/video';
 export const renderBlock = (block) => {
     const { type, id, has_children } = block;
     const value = block[type];
+    console.log('block is')
+    console.log(block)
 
     const children = has_children ? block.children : null;
 
     switch (type) {
         case "paragraph":
-            return <Paragraph text={value.rich_text} />
+            return <Paragraph text={value.rich_text} color={value.color} />
         case "heading_1":
         case "heading_2":
         case "heading_3":
