@@ -6,7 +6,7 @@ export default function Image(props) {
 
     return (
         <figure className='flex flex-col justify-center items-center'>
-            <img src={src} alt={caption} className='rounded-md' />
+            <img src={src} alt={caption} className='rounded-md' loading='lazy' />
             {caption && <figcaption className='italic text-sm text-gray-400'>{caption}</figcaption>}
         </figure>
     );

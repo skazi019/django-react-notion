@@ -106,29 +106,32 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] handle has_children for block in python code so i can show childrens in nested lists or toggle 
 - [X] Lists nesting problem; Nesting problem in general
 - [X] Add a search bar
-<!-- - [ ] Sort filter by date -->
+- [ ] ~~Sort filter by date~~
 - [X] tab filter by tags
     - [X] tags are populating and working correctly
     - [ ] Make the filters act like AND gate
 - [ ] ~~paginate the blogs lists~~
 - [X] previous post is there in dom when loading new post
 - [X] Error response in backend
-- [ ] Post open, shows loading for a split second but the content still takes time to load
-- [ ] Lazy load images
+- [X] Lazy load images
+    - [X] Have added loading attribute to the img tag
+- [X] Post open, shows loading for a split second but the content still takes time to load - switched to useState instead of Suspense
 - [ ] Error when individual post url open instead of opening from home page
+- [ ] After above fix add sharing option in navbar
 
 ### Visual
 - [X] make proper padding for all blocks
 - [X] Display video(youtube, loom etc)
-- [ ] Hover states
 - [X] anchor style 
 - [X] custom pulse loader for blog list and pos
-- [ ] image fullscreen
 - [X] Date in blog list view
 - [X] mobile responsiveness [ ](make back button show on scoll)
 - [X] Navbar (back button)
+    - [ ] Make navbar show on scroll up
 - [X] Add tags in the blog list view
-- [ ] Paragraph and text color
-- [ ] Add animations
 - [X] Fix the width of the list when searching; the width collapses when the article isnt wide enough or no articles present
+- [ ] image fullscreen
+- [ ] Paragraph and text color
 - [ ] Real data in Hero section
+- [ ] Add animations
+- [ ] Hover states

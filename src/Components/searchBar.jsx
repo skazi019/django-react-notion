@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useFilterStore } from '../store';
 
 export default function SearchBar() {
     const [barDisplay, setBarDisplay] = useState('hidden')
     const inputField = useRef(null);
 
-    const { searchFilter, setSearchFilter } = useFilterStore(
+    const { setSearchFilter } = useFilterStore(
         (state) => ({
-            searchFilter: state.searchFilter,
             setSearchFilter: state.setSearchFilter,
         })
     )

@@ -1,4 +1,4 @@
-import { Fragment, useEffect, Suspense } from "react";
+import { Fragment, useEffect, Suspense, useState } from "react";
 import useArticleStore, { useFilterStore } from '../store';
 import Text from "./NotionComponents/text";
 import { renderBlock } from "./renderblock";
@@ -7,6 +7,8 @@ import Navbar from "./navbar";
 
 
 export default function Post({ page }) {
+
+    const [isLoading, setLoading] = useState(true);
 
     const { blocks, setBlocks } = useArticleStore((state) => ({
         blocks: state.blocks,
@@ -34,6 +36,7 @@ export default function Post({ page }) {
             .then(async (response) => {
                 const res = await response.json();
                 setBlocks(res.page_contents)
+                setLoading(false)
             })
     }
 
@@ -49,20 +52,32 @@ export default function Post({ page }) {
 
 
     return (
-        <Suspense fallback={<PostLoader />}>
-            <Navbar />
-            <main>
-                <article className='my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
-                    <h1 className="text-4xl">
-                        <Text text={page.properties.title.title} />
-                    </h1>
-                    <section className="mt-4">
-                        {blocks.map((block, key) => (
-                            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-                        ))}
-                    </section>
-                </article>
-            </main>
-        </Suspense>
+        <>
+
+            {
+                !isLoading ?
+                    (
+                        <>
+                            <Navbar />
+                            <main>
+                                <article className='my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
+                                    <h1 className="text-4xl">
+                                        <Text text={page.properties.title.title} />
+                                    </h1>
+                                    <section className="mt-4">
+                                        {blocks.map((block, key) => (
+                                            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+                                        ))}
+                                    </section>
+                                </article>
+                            </main>
+                        </>
+                    )
+                    :
+                    (
+                        <PostLoader />
+                    )
+            }
+        </>
     );
 }
