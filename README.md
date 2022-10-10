@@ -105,8 +105,8 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] handle the lists ul and ol
 - [X] handle has_children for block in python code so i can show childrens in nested lists or toggle 
 - [X] Lists nesting problem; Nesting problem in general
-- [ ] Add a search bar
-- [ ] Sort filter by date
+- [X] Add a search bar
+<!-- - [ ] Sort filter by date -->
 - [ ] tab filter by tags
 - [ ] paginate the blogs lists
 - [X] previous post is there in dom when loading new post
@@ -127,3 +127,4 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] Add tags in the blog list view
 - [ ] Paragraph and text color
 - [ ] Add animations
+- [ ] Fix the width of the list when searching

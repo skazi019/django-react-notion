@@ -33,6 +33,39 @@ const articleStore = (set) => ({
     },
 });
 
+const filterstore = (set) => ({
+    searchFilter: '',
+    allTags: [],
+    tagFilter: [],
+    setSearchFilter: (str) => {
+        set((state) => ({
+            searchFilter: str
+        }))
+    },
+    setAllTags: (tagList) => {
+        set((state) => ({
+            allTags: tagList
+        }))
+    },
+    addTagToAllTags: (newTag) => {
+        set((state) => ({
+            allTags: [...state.allTags, newTag]
+        }))
+    },
+    addTagToFilter: (newTag) => {
+        set((state) => ({
+            tagFilter: [...state.tagFilter, newTag],
+            allTags: state.allTags.filter((tag, i) => tag.name != newTag.name)
+        }))
+    },
+    deleteTagFromFilter: (newTag) => {
+        set((state) => ({
+            tagFilter: state.tagFilter.filter((tag, i) => tag.name != newTag.name),
+            allTags: [...state.allTags, newTag]
+        }))
+    },
+})
+
 const useArticleStore = create(
     devtools(
         persist(articleStore,
@@ -45,5 +78,7 @@ const useArticleStore = create(
         )
     )
 );
+const useFilterStore = create(devtools(filterstore));
 
 export default useArticleStore;
+export { useFilterStore };

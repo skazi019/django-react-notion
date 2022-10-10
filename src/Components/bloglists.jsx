@@ -1,8 +1,9 @@
 import { Suspense, useEffect, useState } from "react";
-import useArticleStore from "./../store";
+import useArticleStore, { useFilterStore } from "./../store";
 import BlogTile from "./blogtile";
 import { Link } from 'react-router-dom';
 import TileLoader from "./tileloader";
+import Filter from './filterSection';
 
 export default function BlogList() {
 
@@ -12,6 +13,20 @@ export default function BlogList() {
             setArticles: state.setArticles,
         })
     )
+
+    const { searchFilter } = useFilterStore(
+        (state) => ({
+            searchFilter: state.searchFilter,
+        })
+    )
+
+    const applySearchFilter = (text) => {
+        if (text === '') {
+            return text
+        } else {
+            return text.toLowerCase().includes(searchFilter)
+        }
+    }
 
     function fetchArticles() {
         fetch(process.env.REACT_APP_BACKEND_URI + '/get-database/',
@@ -39,14 +54,17 @@ export default function BlogList() {
     return (
         <Suspense fallback={<TileLoader />}>
             <section className="mt-8 flex flex-col justify-center items-left px-6 mx-auto md:max-w-2xl md:px-0 lg:max-w-4xl">
+                <Filter />
                 {
-                    articles.map((article, i) => {
-                        return (
-                            <Link key={i} to={article.properties.slug.rich_text[0].plain_text} className='my-4'>
-                                <BlogTile article={article} />
-                            </Link>
-                        )
-                    })
+                    articles
+                        .filter((article) => applySearchFilter(article.properties.slug.rich_text[0].plain_text))
+                        .map((article, i) => {
+                            return (
+                                <Link key={i} to={article.properties.slug.rich_text[0].plain_text} className='my-4'>
+                                    <BlogTile article={article} />
+                                </Link>
+                            )
+                        })
                 }
             </section>
         </Suspense>

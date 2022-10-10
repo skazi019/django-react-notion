@@ -1,5 +1,5 @@
 import { Fragment, useEffect, Suspense } from "react";
-import useArticleStore from '../store';
+import useArticleStore, { useFilterStore } from '../store';
 import Text from "./NotionComponents/text";
 import { renderBlock } from "./renderblock";
 import PostLoader from "./postloader";
@@ -12,6 +12,13 @@ export default function Post({ page }) {
         blocks: state.blocks,
         setBlocks: state.setBlocks,
     }));
+
+    const { setSearchFilter, setAllTags } = useFilterStore(
+        (state) => ({
+            setSearchFilter: state.setSearchFilter,
+            setAllTags: state.setAllTags,
+        })
+    )
 
     function getBlocks(id) {
         fetch(process.env.REACT_APP_BACKEND_URI + '/get-blocks/' + id,
@@ -32,8 +39,11 @@ export default function Post({ page }) {
 
     useEffect(() => {
         getBlocks(page.id);
+
         return () => {
             setBlocks([]);
+            setSearchFilter('');
+            setAllTags([]);
         }
     }, [])
 
