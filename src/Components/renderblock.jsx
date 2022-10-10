@@ -12,8 +12,6 @@ import Video from './NotionComponents/video';
 export const renderBlock = (block) => {
     const { type, id, has_children } = block;
     const value = block[type];
-    console.log('block is')
-    console.log(block)
 
     const children = has_children ? block.children : null;
 
@@ -36,7 +34,6 @@ export const renderBlock = (block) => {
             const caption = value.caption ? value.caption[0]?.plain_text : null;
             return <Image src={src} caption={caption} />
         case "video":
-            console.log(value)
             const videoSrc = value.type === "file" ? value.file.url : value.external.url;
             const videoCaption = value.caption ? value.caption : null;
             if (value.type === 'external') {

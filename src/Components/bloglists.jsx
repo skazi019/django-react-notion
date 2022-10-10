@@ -98,7 +98,7 @@ export default function BlogList() {
 
     return (
         <Suspense fallback={<TileLoader />}>
-            <section className="mt-8 flex flex-col justify-center items-left px-6 mx-auto md:max-w-2xl md:px-0 lg:max-w-4xl">
+            <section className="mt-8 flex flex-col justify-center items-left px-6 md:px-0 mx-auto md:w-lg md:max-w-2xl lg:w-xl lg:max-w-4xl">
                 <Filter />
                 {
                     articles

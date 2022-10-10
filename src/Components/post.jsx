@@ -52,7 +52,7 @@ export default function Post({ page }) {
         <Suspense fallback={<PostLoader />}>
             <Navbar />
             <main>
-                <article className='my-20 px-6 mx-auto md:max-w-2xl md:px-0 lg:max-w-2xl'>
+                <article className='my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
                     <h1 className="text-4xl">
                         <Text text={page.properties.title.title} />
                     </h1>

@@ -24,7 +24,6 @@ export default function SearchBar() {
     const inputHandler = (e) => {
         const searchBarVal = inputField.current.value.toLowerCase();
         setSearchFilter(searchBarVal);
-        console.log(searchBarVal)
     }
 
     return (
@@ -56,7 +55,7 @@ export default function SearchBar() {
                     id="search-bar"
                     onChange={inputHandler}
                     placeholder='Search . . .'
-                    className={`w-64 text-sm border-b-2 border-slate-500 px-2 outline-0 ${barDisplay}`}
+                    className={`w-48 md:w-64 text-sm border-b-2 border-slate-500 px-2 outline-0 ${barDisplay}`}
                 />
             </div>
         </>

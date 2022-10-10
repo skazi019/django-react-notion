@@ -109,6 +109,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
 <!-- - [ ] Sort filter by date -->
 - [X] tab filter by tags
     - [X] tags are populating and working correctly
+    - [ ] Make the filters act like AND gate
 - [ ] ~~paginate the blogs lists~~
 - [X] previous post is there in dom when loading new post
 - [X] Error response in backend
@@ -129,4 +130,5 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] Add tags in the blog list view
 - [ ] Paragraph and text color
 - [ ] Add animations
-- [ ] Fix the width of the list when searching
+- [X] Fix the width of the list when searching; the width collapses when the article isnt wide enough or no articles present
+- [ ] Real data in Hero section

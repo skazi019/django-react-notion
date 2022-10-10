@@ -8,6 +8,11 @@ module.exports = {
         '144': '36rem',
         '160': '40rem',
         '168': '42rem',
+        'xs': '16rem',
+        'sm': '32rem',
+        'md': '48rem',
+        'lg': '64rem',
+        'xl': '80rem',
       }
     },
   },
