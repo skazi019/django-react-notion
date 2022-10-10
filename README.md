@@ -107,12 +107,14 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] Lists nesting problem; Nesting problem in general
 - [X] Add a search bar
 <!-- - [ ] Sort filter by date -->
-- [ ] tab filter by tags
-- [ ] paginate the blogs lists
+- [X] tab filter by tags
+    - [X] tags are populating and working correctly
+- [ ] ~~paginate the blogs lists~~
 - [X] previous post is there in dom when loading new post
 - [X] Error response in backend
 - [ ] Post open, shows loading for a split second but the content still takes time to load
 - [ ] Lazy load images
+- [ ] Error when individual post url open instead of opening from home page
 
 ### Visual
 - [X] make proper padding for all blocks

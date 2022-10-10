@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useFilterStore } from "../store";
 import Tags from "./NotionComponents/tags";
 
 export default function BlogTile({ article }) {
@@ -10,38 +8,6 @@ export default function BlogTile({ article }) {
         month: "long",
         day: "2-digit"
     }).format(date)
-
-    const { allTags, addTagToAllTags } = useFilterStore(
-        (state) => ({
-            allTags: state.allTags,
-            addTagToAllTags: state.addTagToAllTags,
-        })
-    );
-
-    const containsObject = (obj, list) => {
-        console.log(`${obj.name} in question`)
-        console.log('list is')
-        console.log(list)
-        for (let item in list) {
-            if (item.name === obj.name) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    const addTag = (Tags) => {
-        Tags.map((tag, i) => {
-            if (!containsObject(tag, allTags)) {
-                addTagToAllTags(tag);
-            }
-        })
-    }
-
-    useEffect(() => {
-        addTag(multiTags);
-    }, [])
-
 
     return (
         <div className="flex flex-col justify-center items-left">

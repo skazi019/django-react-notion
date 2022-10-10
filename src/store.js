@@ -1,4 +1,4 @@
-import create from 'zustand'
+import create from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
 const articleStore = (set) => ({
@@ -33,7 +33,7 @@ const articleStore = (set) => ({
     },
 });
 
-const filterstore = (set) => ({
+const filterstore = (set, get) => ({
     searchFilter: '',
     allTags: [],
     tagFilter: [],
@@ -47,20 +47,15 @@ const filterstore = (set) => ({
             allTags: tagList
         }))
     },
-    addTagToAllTags: (newTag) => {
-        set((state) => ({
-            allTags: [...state.allTags, newTag]
-        }))
-    },
     addTagToFilter: (newTag) => {
         set((state) => ({
             tagFilter: [...state.tagFilter, newTag],
-            allTags: state.allTags.filter((tag, i) => tag.name != newTag.name)
+            allTags: state.allTags.filter((tag, i) => tag.name !== newTag.name)
         }))
     },
     deleteTagFromFilter: (newTag) => {
         set((state) => ({
-            tagFilter: state.tagFilter.filter((tag, i) => tag.name != newTag.name),
+            tagFilter: state.tagFilter.filter((tag, i) => tag.name !== newTag.name),
             allTags: [...state.allTags, newTag]
         }))
     },

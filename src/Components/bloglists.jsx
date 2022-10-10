@@ -14,9 +14,11 @@ export default function BlogList() {
         })
     )
 
-    const { searchFilter } = useFilterStore(
+    const { searchFilter, setAllTags, tagFilter } = useFilterStore(
         (state) => ({
             searchFilter: state.searchFilter,
+            setAllTags: state.setAllTags,
+            tagFilter: state.tagFilter,
         })
     )
 
@@ -47,8 +49,51 @@ export default function BlogList() {
     }
 
 
+    const [localTagList, updateLocalTagList] = useState([]);
+
+    const containsObject = (obj, list) => {
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].name === obj.name) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    const addTag = (Tags) => {
+        Tags.map((tag, i) => {
+            if (!containsObject(tag, localTagList)) {
+                updateLocalTagList(localTagList.push(tag))
+            }
+        })
+    }
+
+    function iterateOverArticles(allArticles) {
+        allArticles.map((article, i) => {
+            addTag(article.properties.tags.multi_select)
+        })
+    }
+
+    function applyTagFilter(articleTags, tagFilterList) {
+        if (tagFilterList.length < 1) {
+            return true
+        } else {
+            let shouldFilter = []
+            for (let i = 0; i < articleTags.length; i++) {
+                if (containsObject(articleTags[i], tagFilterList)) {
+                    shouldFilter.push(true);
+                } else {
+                    shouldFilter.push(false);
+                }
+            }
+            return shouldFilter.includes(true) ? true : false
+        }
+    }
+
     useEffect(() => {
         fetchArticles();
+        iterateOverArticles(articles);
+        setAllTags(localTagList);
     }, [])
 
     return (
@@ -58,6 +103,7 @@ export default function BlogList() {
                 {
                     articles
                         .filter((article) => applySearchFilter(article.properties.slug.rich_text[0].plain_text))
+                        .filter((article) => applyTagFilter(article.properties.tags.multi_select, tagFilter))
                         .map((article, i) => {
                             return (
                                 <Link key={i} to={article.properties.slug.rich_text[0].plain_text} className='my-4'>
