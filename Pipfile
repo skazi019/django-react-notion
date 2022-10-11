@@ -10,6 +10,7 @@ gunicorn = "*"
 notion-client = "*"
 python-dotenv = "*"
 django-cors-headers = "*"
+requests = "*"
 
 [dev-packages]
 black = "*"

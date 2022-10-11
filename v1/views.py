@@ -1,14 +1,16 @@
-from doctest import master
 import os
+import requests
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from notion_client import Client
 
 
+notion = Client(auth=os.environ.get("NOTION_TOKEN"))
+
 @api_view(["GET"])
 def getDatabase(request):
-    notion = Client(auth=os.environ.get("NOTION_TOKEN"))
+    global notion
     try:
         notiondatabse = notion.databases.query(
             **{
@@ -50,10 +52,20 @@ def getDatabase(request):
 
 
 @api_view(["GET"])
-def getPage(request, id):
-    notion = Client(auth=os.environ.get("NOTION_TOKEN"))
+def getPage(request, slug):
+    global notion
     try:
-        notionPage = notion.pages.retrieve(page_id=id)
+        allArticles = requests.get(
+            url=os.path.join(os.environ["REACT_APP_BACKEND_URI"], "get-database"),
+            headers={
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+        ).json()
+        allArticles = allArticles["results"]
+        for page in allArticles:
+            if page["properties"]["slug"]["rich_text"][0]["plain_text"] == slug:
+                notionPage = notion.pages.retrieve(page_id=page["id"])
     except Exception as e:
         return Response(
             data={
@@ -100,13 +112,14 @@ def hasChildren(parentBlock: any, notion: Client):
     else:
         masterBlock["children"] = getChildBlock(notion=notion, id=masterBlock["id"])
         for index, child in enumerate(masterBlock["children"]):
-            masterBlock["children"][index] = hasChildren(parentBlock=child, notion=notion)
+            masterBlock["children"][index] = hasChildren(
+                parentBlock=child, notion=notion
+            )
     return masterBlock
 
 
 @api_view(["GET"])
 def getBlocks(request, id):
-    notion = Client(auth=os.environ.get("NOTION_TOKEN"))
     try:
         blocks = getChildBlock(notion=notion, id=id)
         for index, block in enumerate(blocks):

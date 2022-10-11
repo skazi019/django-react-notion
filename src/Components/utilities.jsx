@@ -8,7 +8,7 @@ export const containsObject = (obj, list) => {
     return false;
 }
 
-export function fetchAllArticles(setArticlesFunc) {
+export async function fetchAllArticles(setArticlesFunc) {
     fetch(process.env.REACT_APP_BACKEND_URI + '/get-database/',
         {
             method: "GET",

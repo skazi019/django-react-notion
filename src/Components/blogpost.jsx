@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import useArticleStore from '../store';
 import Post from './post';
 import PostLoader from './postloader';
+import { fetchAllArticles } from './utilities';
 
 
 export default function BlogPost(props) {
@@ -11,15 +12,40 @@ export default function BlogPost(props) {
 
     const [isLoading, setLoading] = useState(true);
 
-    const { page, getPageFromSlug } = useArticleStore((state) => ({
+    const { articles, setArticles, page, setPage, getPageFromSlug } = useArticleStore((state) => ({
+        articles: state.articles,
+        setArticles: state.setArticles,
         page: state.page,
+        setPage: state.setPage,
         getPageFromSlug: state.getPageFromSlug,
     }));
 
+    async function fetchPage() {
+        if (articles.length < 1) {
+            console.log('Making page request')
+            await fetch(process.env.REACT_APP_BACKEND_URI + '/get-page/' + data.slug,
+                {
+                    method: "GET",
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        "Accept": "application/json",
+                    }
+                }
+            ).then(async (response) => {
+                const res = await response.json();
+                const result = res.page_properties;
+                setPage(result)
+                setLoading(false)
+            })
+        } else {
+            getPageFromSlug(data.slug)
+            setLoading(false)
+        }
+    }
 
     useEffect(() => {
-        getPageFromSlug(data.slug);
-        setLoading(false);
+        fetchPage();
     }, [])
 
 
@@ -28,7 +54,7 @@ export default function BlogPost(props) {
             {
                 isLoading ?
                     <main>
-                        <section className='max-w-2xl mx-auto my-20'>
+                        <section className='my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
                             <PostLoader />
                         </section>
                     </main>
