@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "notion-blog.fly.dev",
-    "https://notion-blog-7q9n.onrender.com/",
+    "notion-blog-7q9n.onrender.com/",
 ]
 
 
