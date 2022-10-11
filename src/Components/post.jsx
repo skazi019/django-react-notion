@@ -53,31 +53,30 @@ export default function Post({ page }) {
 
     return (
         <>
-
-            {
-                !isLoading ?
-                    (
-                        <>
-                            <Navbar />
-                            <main>
-                                <article className='my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
-                                    <h1 className="text-4xl">
-                                        <Text text={page.properties.title.title} />
-                                    </h1>
+            <Navbar />
+            <main>
+                <article className='my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
+                    <h1 className="text-4xl">
+                        <Text text={page.properties.title.title} />
+                    </h1>
+                    {
+                        !isLoading ?
+                            (
+                                <>
                                     <section className="mt-4">
                                         {blocks.map((block, key) => (
                                             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
                                         ))}
                                     </section>
-                                </article>
-                            </main>
-                        </>
-                    )
-                    :
-                    (
-                        <PostLoader />
-                    )
-            }
+                                </>
+                            )
+                            :
+                            (
+                                <PostLoader />
+                            )
+                    }
+                </article>
+            </main>
         </>
     );
 }

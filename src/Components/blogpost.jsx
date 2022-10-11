@@ -12,9 +12,7 @@ export default function BlogPost(props) {
     const [isLoading, setLoading] = useState(true);
 
     const { page, getPageFromSlug } = useArticleStore((state) => ({
-        slugId: state.slugId,
         page: state.page,
-        setPage: state.setPage,
         getPageFromSlug: state.getPageFromSlug,
     }));
 

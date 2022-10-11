@@ -116,7 +116,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] Lazy load images
     - [X] Have added loading attribute to the img tag
 - [X] Post open, shows loading for a split second but the content still takes time to load - switched to useState instead of Suspense
-- [ ] Error when individual post url open instead of opening from home page
+- [ ] Error when individual post url open instead of opening from home page - need to fix this so i can share articles
 - [ ] After above fix add sharing option in navbar
 
 ### Visual

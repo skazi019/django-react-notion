@@ -4,6 +4,7 @@ import BlogTile from "./blogtile";
 import { Link } from 'react-router-dom';
 import TileLoader from "./tileloader";
 import Filter from './filterSection';
+import { containsObject, fetchAllArticles } from "./utilities";
 
 export default function BlogList() {
 
@@ -14,10 +15,9 @@ export default function BlogList() {
         })
     )
 
-    const { searchFilter, setAllTags, tagFilter } = useFilterStore(
+    const { searchFilter, tagFilter } = useFilterStore(
         (state) => ({
             searchFilter: state.searchFilter,
-            setAllTags: state.setAllTags,
             tagFilter: state.tagFilter,
         })
     )
@@ -28,50 +28,6 @@ export default function BlogList() {
         } else {
             return text.toLowerCase().includes(searchFilter)
         }
-    }
-
-    function fetchArticles() {
-        fetch(process.env.REACT_APP_BACKEND_URI + '/get-database/',
-            {
-                method: "GET",
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                    "Accept": "application/json",
-                }
-            }
-        )
-            .then(async (response) => {
-                const res = await response.json();
-                const result = res.results;
-                setArticles(result)
-            })
-    }
-
-
-    const [localTagList, updateLocalTagList] = useState([]);
-
-    const containsObject = (obj, list) => {
-        for (let i = 0; i < list.length; i++) {
-            if (list[i].name === obj.name) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    const addTag = (Tags) => {
-        Tags.map((tag, i) => {
-            if (!containsObject(tag, localTagList)) {
-                updateLocalTagList(localTagList.push(tag))
-            }
-        })
-    }
-
-    function iterateOverArticles(allArticles) {
-        allArticles.map((article, i) => {
-            addTag(article.properties.tags.multi_select)
-        })
     }
 
     function applyTagFilter(articleTags, tagFilterList) {
@@ -90,29 +46,29 @@ export default function BlogList() {
         }
     }
 
+
     useEffect(() => {
-        fetchArticles();
-        iterateOverArticles(articles);
-        setAllTags(localTagList);
+        fetchAllArticles(setArticles);
     }, [])
 
     return (
-        <Suspense fallback={<TileLoader />}>
-            <section className="mt-8 flex flex-col justify-center items-left px-6 md:px-0 mx-auto md:w-lg md:max-w-2xl lg:w-xl lg:max-w-4xl">
-                <Filter />
-                {
-                    articles
-                        .filter((article) => applySearchFilter(article.properties.slug.rich_text[0].plain_text))
-                        .filter((article) => applyTagFilter(article.properties.tags.multi_select, tagFilter))
-                        .map((article, i) => {
-                            return (
+        <section className="mt-8 flex flex-col justify-center items-left px-6 md:px-0 mx-auto md:w-lg md:max-w-2xl lg:w-xl lg:max-w-4xl">
+            <Filter />
+            {
+                articles
+                    .filter((article) => applySearchFilter(article.properties.slug.rich_text[0].plain_text))
+                    .filter((article) => applyTagFilter(article.properties.tags.multi_select, tagFilter))
+                    .map((article, i) => {
+                        return (
+
+                            <Suspense fallback={<TileLoader />}>
                                 <Link key={i} to={article.properties.slug.rich_text[0].plain_text} className='my-4'>
                                     <BlogTile article={article} />
                                 </Link>
-                            )
-                        })
-                }
-            </section>
-        </Suspense>
+                            </Suspense>
+                        )
+                    })
+            }
+        </section>
     );
 }

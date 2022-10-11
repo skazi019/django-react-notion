@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
-import { useFilterStore } from '../store';
+import React, { useState, useEffect } from 'react'
+import useArticleStore, { useFilterStore } from '../store';
 import Tags from './NotionComponents/tags';
+import { containsObject } from './utilities';
 
 export default function TagFilter() {
     const [filterDisplay, setFilterDisplay] = useState('hidden');
 
-    const { allTags, tagFilter, addTagToFilter, deleteTagFromFilter } = useFilterStore(
+    const { articles } = useArticleStore(
+        (state) => ({
+            articles: state.articles,
+        })
+    )
+
+    const { allTags, setAllTags, tagFilter, addTagToFilter, deleteTagFromFilter } = useFilterStore(
         (state) => ({
             allTags: state.allTags,
+            setAllTags: state.setAllTags,
             tagFilter: state.tagFilter,
             addTagToFilter: state.addTagToFilter,
             deleteTagFromFilter: state.deleteTagFromFilter,
@@ -21,6 +29,27 @@ export default function TagFilter() {
             setFilterDisplay('hidden');
         }
     }
+
+    const [localTagList, updateLocalTagList] = useState([]);
+
+    const addTag = (Tags) => {
+        Tags.map((tag, i) => {
+            if (!containsObject(tag, localTagList)) {
+                updateLocalTagList(localTagList.push(tag))
+            }
+        })
+    }
+
+    function iterateOverArticles(allArticles) {
+        allArticles.map((article, i) => {
+            addTag(article.properties.tags.multi_select)
+        })
+    }
+
+    useEffect(() => {
+        iterateOverArticles(articles);
+        setAllTags(localTagList);
+    }, [])
 
     return (
         <>
