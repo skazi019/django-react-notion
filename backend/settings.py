@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "notion-blog.fly.dev",
+    "https://notion-blog-7q9n.onrender.com/",
 ]
 
 
@@ -148,4 +149,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://notion-blog.fly.dev",
+    "https://notion-blog-7q9n.onrender.com/",
 ]
