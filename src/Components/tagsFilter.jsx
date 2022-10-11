@@ -75,7 +75,7 @@ export default function TagFilter() {
                     </button>
 
                     <div className={`${filterDisplay} absolute w-64 top-6 right-0 bg-white border border-gray-200 rounded`}>
-                        <div className='flex flex-row flex-wrap gap-2 border-b border-gray-200 p-2'>
+                        <div className='flex flex-row flex-wrap gap-2 bg-amber-100/50 border-b border-gray-200 p-2'>
                             {
                                 tagFilter.length > 0 ?
                                     (
@@ -83,11 +83,11 @@ export default function TagFilter() {
                                     )
                                     :
                                     (
-                                        <p className='text-xs text-gray-300'>Select tags from below to filter articles</p>
+                                        <p className='text-xs text-gray-500'>Select tags from below to filter articles</p>
                                     )
                             }
                         </div>
-                        <div className='flex flex-row flex-wrap p-2 gap-2'>
+                        <div className='flex flex-row flex-wrap p-2 gap-2 bg-slate-100/30'>
                             <Tags tags={allTags} callback={addTagToFilter} />
                         </div>
                     </div>

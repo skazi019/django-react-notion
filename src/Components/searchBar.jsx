@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useFilterStore } from '../store';
 
 export default function SearchBar() {
@@ -14,7 +14,6 @@ export default function SearchBar() {
     const toggleBarDisplay = () => {
         if (barDisplay === 'hidden') {
             setBarDisplay('block')
-            inputField.current.focus();
         } else {
             setBarDisplay('hidden')
         }
@@ -54,7 +53,7 @@ export default function SearchBar() {
                     id="search-bar"
                     onChange={inputHandler}
                     placeholder='Search . . .'
-                    className={`w-48 md:w-64 text-sm border-b-2 border-slate-500 px-2 outline-0 ${barDisplay}`}
+                    className={`w-48 md:w-64 text-sm border-b-2 border-slate-800 px-2 outline-0 ${barDisplay}`}
                 />
             </div>
         </>

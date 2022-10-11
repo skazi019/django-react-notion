@@ -118,6 +118,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] Post open, shows loading for a split second but the content still takes time to load - switched to useState instead of Suspense
 - [X] Error when individual post url open instead of opening from home page - need to fix this so i can share articles
 - [X] After above fix add sharing option in navbar
+    - [ ] Add different platform to share to, linkedin, twitter, copy to clipboard etc
 - [ ] Add analytics
 
 ### Visual

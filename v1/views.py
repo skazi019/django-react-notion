@@ -1,5 +1,8 @@
 import os
 import requests
+from django.conf import settings
+from django.shortcuts import render
+from django.http import HttpResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -7,6 +10,7 @@ from notion_client import Client
 
 
 notion = Client(auth=os.environ.get("NOTION_TOKEN"))
+
 
 @api_view(["GET"])
 def getDatabase(request):
@@ -141,4 +145,14 @@ def getBlocks(request, id):
             },
             status=status.HTTP_200_OK,
             content_type="application/json",
+        )
+
+
+# Serving the React SPA
+def index(request):
+    try:
+        return render(request=request, template_name="index.html")
+    except FileNotFoundError:
+        return HttpResponse(
+            status=501,
         )

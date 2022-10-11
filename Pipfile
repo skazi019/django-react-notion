@@ -11,6 +11,7 @@ notion-client = "*"
 python-dotenv = "*"
 django-cors-headers = "*"
 requests = "*"
+whitenoise = "*"
 
 [dev-packages]
 black = "*"
