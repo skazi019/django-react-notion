@@ -6,11 +6,7 @@ import { containsObject } from './utilities';
 export default function TagFilter() {
     const [filterDisplay, setFilterDisplay] = useState('hidden');
 
-    const { articles } = useArticleStore(
-        (state) => ({
-            articles: state.articles,
-        })
-    )
+    const articles = useArticleStore((state) => state.articles)
 
     const { allTags, setAllTags, tagFilter, addTagToFilter, deleteTagFromFilter } = useFilterStore(
         (state) => ({

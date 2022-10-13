@@ -1,4 +1,4 @@
-# fly.toml file generated for notion-blog on 2022-10-11T20:18:47+05:30
+# fly.toml file generated for notion-blog on 2022-10-12T16:02:48+05:30
 
 app = "notion-blog"
 
@@ -8,9 +8,8 @@ processes = []
 
 [env]
   PORT = "8080"
-  REACT_APP_BACKEND_URI="notion-blog.fly.dev"
+  REACT_APP_BACKEND_URI="https://notion-blog.fly.dev"
   DJANGO_KEY="hg0$b@rixdadqlv^&tbkxqoh4dj+ky_tq2zx_8^vbyduzn(f$8ad9f2q3*(YUY97y98Y01IE20937GP08yf89h490FHJ8HF98HFP09SYS8(Y98Y*DD9yf9834hr93f#$(*"
-  DJANGO_DEBUG="True"
   NOTION_TOKEN="secret_zYUFAxASmO0srxa1yzOEYcGsU6Ub0vRNXaRE6RXHur0"
   NOTION_DATABASE_ID="045eeab65ac04ca88c8b450a5deffcb2"
 

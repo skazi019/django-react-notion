@@ -8,8 +8,11 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from notion_client import Client
 
+from dotenv import dotenv_values
 
-notion = Client(auth=os.environ.get("NOTION_TOKEN"))
+config = dotenv_values(os.path.join(settings.BASE_DIR, ".env"))
+
+notion = Client(auth=config.get("NOTION_TOKEN"))
 
 
 @api_view(["GET"])
@@ -18,7 +21,7 @@ def getDatabase(request):
     try:
         notiondatabse = notion.databases.query(
             **{
-                "database_id": os.environ.get("NOTION_DATABASE_ID"),
+                "database_id": config.get("NOTION_DATABASE_ID"),
                 "filter": {
                     "and": [
                         {
@@ -60,7 +63,7 @@ def getPage(request, slug):
     global notion
     try:
         allArticles = requests.get(
-            url=os.path.join(os.environ["REACT_APP_BACKEND_URI"], "get-database"),
+            url=os.path.join(config.get("REACT_APP_BACKEND_URI"), "get-database"),
             headers={
                 "Content-Type": "application/json",
                 "Accept": "application/json",

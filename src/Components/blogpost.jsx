@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import useArticleStore from '../store';
 import Post from './post';
 import PostLoader from './postloader';
-import { fetchAllArticles } from './utilities';
 
 
 export default function BlogPost(props) {
@@ -12,9 +11,8 @@ export default function BlogPost(props) {
 
     const [isLoading, setLoading] = useState(true);
 
-    const { articles, setArticles, page, setPage, getPageFromSlug } = useArticleStore((state) => ({
+    const { articles, page, setPage, getPageFromSlug } = useArticleStore((state) => ({
         articles: state.articles,
-        setArticles: state.setArticles,
         page: state.page,
         setPage: state.setPage,
         getPageFromSlug: state.getPageFromSlug,

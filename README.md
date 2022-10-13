@@ -92,6 +92,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
 # Perparing for Production
 
 # Deployment
+> Deployed on [fly.io](https://fly.io)
 
 # Unsuppported Blocks
  - Columns
@@ -120,6 +121,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] After above fix add sharing option in navbar
     - [ ] Add different platform to share to, linkedin, twitter, copy to clipboard etc
 - [ ] Add analytics
+- [ ] Tags dont load in the tag filter when the page is first loaded - https://docs.pmnd.rs/zustand/recipes/recipes#read-from-state-in-actions
 
 ### Visual
 - [X] make proper padding for all blocks
@@ -132,8 +134,11 @@ I use it everyday from planning and todos to notes and content and now, even blo
     - [ ] Make navbar show on scroll up
 - [X] Add tags in the blog list view
 - [X] Fix the width of the list when searching; the width collapses when the article isnt wide enough or no articles present
+- [X] Width collapses in mobile when the article is small in length
 - [ ] image fullscreen
 - [ ] Paragraph and text color
 - [ ] Real data in Hero section
 - [ ] Add animations
 - [ ] Hover states
+- [ ] Update the Logo in title bar?
+- [ ] Optimise the meta tag for seo

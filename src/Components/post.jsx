@@ -1,4 +1,4 @@
-import { Fragment, useEffect, Suspense, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import useArticleStore, { useFilterStore } from '../store';
 import Text from "./NotionComponents/text";
 import { renderBlock } from "./renderblock";
@@ -47,6 +47,7 @@ export default function Post({ page }) {
             setBlocks([]);
             setSearchFilter('');
             setAllTags([]);
+            document.title = 'Kaushal Sharma Blog'
         }
     }, [])
 
