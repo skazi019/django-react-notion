@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect } from "react";
 import useArticleStore, { useFilterStore } from "./../store";
 import BlogTile from "./blogtile";
 import { Link } from 'react-router-dom';
@@ -52,7 +52,7 @@ export default function BlogList() {
     }, [])
 
     return (
-        <section className="mt-8 flex flex-col justify-center items-left px-6 md:px-0 mx-auto md:w-lg md:max-w-2xl lg:w-xl lg:max-w-4xl">
+        <section className="mt-8 flex flex-col justify-center items-left px-6 sm:px-20 w-screen md:px-0 mx-auto md:w-lg md:max-w-2xl lg:w-xl lg:max-w-4xl">
             <Filter />
             {
                 articles

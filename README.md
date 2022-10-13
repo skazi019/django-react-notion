@@ -5,16 +5,25 @@
 <br />
 
 ### Table of Contents
+- [Notion Blog](#notion-blog)
+    - [Table of Contents](#table-of-contents)
 - [Motivation](#motivation)
 - [Why is backend required? Why not just build it in React?](#why-is-backend-required-why-not-just-build-it-in-react)
 - [Techstack](#techstack)
-    - [Why React?](#why-react)
-    - [Why Django?](#why-django)
-    - [Why Notion?](#why-notion)
+  - [Why React?](#why-react)
+  - [Why Django?](#why-django)
+  - [Why Notion?](#why-notion)
+  - [Main Challenges Faced?](#main-challenges-faced)
+    - [Nesting lists till the end(used recursion or DFS)](#nesting-lists-till-the-endused-recursion-or-dfs)
 - [Run it Locally](#run-it-locally)
-- [How to make changes?](#how-to-make-changes)
-- [Prepaing for Production](#perparing-for-production)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [Perparing for Production](#perparing-for-production)
 - [Deployment](#deployment)
+- [Unsuppported Blocks](#unsuppported-blocks)
+- [TODO](#todo)
+    - [Functional](#functional)
+    - [Visual](#visual)
 
 <br />
 
@@ -121,7 +130,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] After above fix add sharing option in navbar
     - [ ] Add different platform to share to, linkedin, twitter, copy to clipboard etc
 - [ ] Add analytics
-- [ ] Tags dont load in the tag filter when the page is first loaded - https://docs.pmnd.rs/zustand/recipes/recipes#read-from-state-in-actions
+- [X] Tags dont load in the tag filter when the page is first loaded - https://docs.pmnd.rs/zustand/recipes/recipes#read-from-state-in-actions
 
 ### Visual
 - [X] make proper padding for all blocks

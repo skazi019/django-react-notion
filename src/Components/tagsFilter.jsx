@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import useArticleStore, { useFilterStore } from '../store';
+import React, { useState } from 'react'
+import { useFilterStore } from '../store';
 import Tags from './NotionComponents/tags';
-import { containsObject } from './utilities';
 
 export default function TagFilter() {
     const [filterDisplay, setFilterDisplay] = useState('hidden');
 
-    const articles = useArticleStore((state) => state.articles)
-
-    const { allTags, setAllTags, tagFilter, addTagToFilter, deleteTagFromFilter } = useFilterStore(
+    const { allTags, tagFilter, addTagToFilter, deleteTagFromFilter } = useFilterStore(
         (state) => ({
             allTags: state.allTags,
-            setAllTags: state.setAllTags,
             tagFilter: state.tagFilter,
             addTagToFilter: state.addTagToFilter,
             deleteTagFromFilter: state.deleteTagFromFilter,
@@ -26,32 +22,11 @@ export default function TagFilter() {
         }
     }
 
-    const [localTagList, updateLocalTagList] = useState([]);
-
-    const addTag = (Tags) => {
-        Tags.map((tag, i) => {
-            if (!containsObject(tag, localTagList)) {
-                updateLocalTagList(localTagList.push(tag))
-            }
-        })
-    }
-
-    function iterateOverArticles(allArticles) {
-        allArticles.map((article, i) => {
-            addTag(article.properties.tags.multi_select)
-        })
-    }
-
-    useEffect(() => {
-        iterateOverArticles(articles);
-        setAllTags(localTagList);
-    }, [])
-
     return (
         <>
             <div className='flex flex-row justify-start items-center gap-4'>
                 <div className='relative'>
-                    <button onClick={toggleTagFilterDisplay} className=''>
+                    <button onClick={toggleTagFilterDisplay}>
                         {
                             filterDisplay === 'hidden' ?
                                 (

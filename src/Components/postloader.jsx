@@ -1,6 +1,6 @@
 export default function PostLoader() {
     return (
-        <div className="my-8 animate-pulse px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl">
+        <div className="my-8 animate-pulse md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl">
             <div className="flex flex-col gap-6">
                 {/* heading */}
                 <div className="h-4 bg-slate-200 rounded w-full"></div>

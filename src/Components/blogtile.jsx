@@ -1,13 +1,33 @@
+import { useFilterStore } from "../store";
+import { containsObject } from "./utilities";
 import Tags from "./NotionComponents/tags";
 
 export default function BlogTile({ article }) {
     const date = new Date(article.properties.date.date.start);
-    const multiTags = article.properties.tags.multi_select
+    const multiTags = article.properties.tags.multi_select;
     const formattedDate = new Intl.DateTimeFormat("en-GB", {
         year: "numeric",
         month: "long",
         day: "2-digit"
-    }).format(date)
+    }).format(date);
+
+    const { allTags, setAllTags, tagFilter } = useFilterStore(
+        (state) => ({
+            allTags: state.allTags,
+            setAllTags: state.setAllTags,
+            tagFilter: state.tagFilter,
+        })
+    );
+
+    const addTag = (Tags) => {
+        Tags.map((tag, i) => {
+            if (!containsObject(tag, allTags) && !containsObject(tag, tagFilter)) {
+                setAllTags([...allTags, tag])
+            }
+        })
+    };
+
+    addTag(multiTags);
 
     return (
         <div className="flex flex-col justify-center items-left">
