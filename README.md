@@ -127,8 +127,10 @@ I use it everyday from planning and todos to notes and content and now, even blo
     - [X] Have added loading attribute to the img tag
 - [X] Post open, shows loading for a split second but the content still takes time to load - switched to useState instead of Suspense
 - [X] Error when individual post url open instead of opening from home page - need to fix this so i can share articles
+    - [ ] URls are conflicting between react router and django urls hence the post not opening
 - [X] After above fix add sharing option in navbar
-    - [ ] Add different platform to share to, linkedin, twitter, copy to clipboard etc
+    - [ ] Make navbar appear on scroll up
+    - [X] Add different platform to share to, linkedin, twitter, copy to clipboard etc
 - [ ] Add analytics
 - [X] Tags dont load in the tag filter when the page is first loaded - https://docs.pmnd.rs/zustand/recipes/recipes#read-from-state-in-actions
 
@@ -151,3 +153,4 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [ ] Hover states
 - [ ] Update the Logo in title bar?
 - [ ] Optimise the meta tag for seo
+- [ ] Color in paragraph
