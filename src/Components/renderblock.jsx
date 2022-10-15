@@ -17,7 +17,7 @@ export const renderBlock = (block) => {
 
     switch (type) {
         case "paragraph":
-            return <Paragraph text={value.rich_text} color={value.color} />
+            return <Paragraph text={value.rich_text} />
         case "heading_1":
         case "heading_2":
         case "heading_3":

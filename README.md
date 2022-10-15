@@ -153,4 +153,4 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [ ] Hover states
 - [ ] Update the Logo in title bar?
 - [ ] Optimise the meta tag for seo
-- [ ] Color in paragraph
+- [X] Color in paragraph
