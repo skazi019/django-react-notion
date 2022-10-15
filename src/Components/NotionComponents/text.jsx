@@ -9,7 +9,7 @@ export default function Text(props) {
 
 
     const notationColorToClass = {
-        "default": "bg-neutral-100 text-gray-800",
+        "default": "#94a3b8",
         "gray": "#94a3b8",
         "brown": "#fb923c",
         "orange": "#fb923c",
@@ -50,6 +50,14 @@ export default function Text(props) {
                             <EmptyLine />
                         )
                     }
+                    else if (underline) {
+                        console.log(value)
+                        return (
+                            <RoughNotation type="underline" color={notationColorToClass[color]} padding={(0, 0)} strokeWidth={1} show={true} >
+                                {text.content}
+                            </RoughNotation>
+                        )
+                    }
                     else if (color !== 'default' && !strikethrough) {
                         if (color.split('_')[1] === 'background') {
                             return (
@@ -59,14 +67,13 @@ export default function Text(props) {
                             )
                         } else {
                             return (
-                                <RoughNotation type="underline" color={notationColorToClass[color]} padding={(1, 0)} show={true}>
+                                <RoughNotation type="circle" color={notationColorToClass[color]} padding={(1, 0)} show={true}>
                                     {text.content}
                                 </RoughNotation>
                             )
                         }
                     }
                     else if (strikethrough) {
-                        console.log(text)
                         return (
                             <RoughNotation type="strike-through" color={notationColorToClass[color]} strokeWidth={1} show={true} >
                                 {text.content}
@@ -76,7 +83,7 @@ export default function Text(props) {
                     else {
                         return (
                             <span id={id}
-                                className={`${extraClasses} ${bold ? 'font-semibold' : ''} ${code ? 'bg-gray-200 px-1 rounded text-red-500' : ''} ${italic ? 'italic' : ''} ${strikethrough ? 'line-through' : ''} ${underline ? 'underline underline-offset-2' : ''} `}
+                                className={`${extraClasses} ${bold ? 'font-semibold' : ''} ${code ? 'bg-gray-200 px-1 rounded text-red-500' : ''} ${italic ? 'italic' : ''}`}
                             >
                                 {text.link ? <a href={text.link.url} target='_blank' rel="noreferrer" className='text-gray-400 underline underline-offset-2'>{text.content}</a> : text.content}
                             </span>

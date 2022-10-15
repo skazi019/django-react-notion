@@ -57,7 +57,7 @@ export default function Post({ page }) {
             <Navbar />
             <main>
                 <article className='my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
-                    <h1 className="text-4xl">
+                    <h1 className="text-4xl font-semibold">
                         <Text text={page.properties.title.title} />
                     </h1>
                     {

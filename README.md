@@ -142,10 +142,10 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] Date in blog list view
 - [X] mobile responsiveness [ ](make back button show on scoll)
 - [X] Navbar (back button)
-    - [ ] Make navbar show on scroll up
 - [X] Add tags in the blog list view
 - [X] Fix the width of the list when searching; the width collapses when the article isnt wide enough or no articles present
 - [X] Width collapses in mobile when the article is small in length
+- [X] Color in paragraph
 - [ ] image fullscreen
 - [ ] Paragraph and text color
 - [ ] Real data in Hero section
@@ -153,4 +153,3 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [ ] Hover states
 - [ ] Update the Logo in title bar?
 - [ ] Optimise the meta tag for seo
-- [X] Color in paragraph
