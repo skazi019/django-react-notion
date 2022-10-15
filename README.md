@@ -129,7 +129,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] Error when individual post url open instead of opening from home page - need to fix this so i can share articles
     - [ ] URls are conflicting between react router and django urls hence the post not opening - missing a / while calling get-database in the get-page function
 - [X] After above fix add sharing option in navbar
-    - [ ] Make navbar appear on scroll up
+    - [X] Make navbar appear on scroll up
     - [X] Add different platform to share to, linkedin, twitter, copy to clipboard etc
 - [ ] Add analytics
 - [X] Tags dont load in the tag filter when the page is first loaded - https://docs.pmnd.rs/zustand/recipes/recipes#read-from-state-in-actions
@@ -147,7 +147,6 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] Width collapses in mobile when the article is small in length
 - [X] Color in paragraph
 - [ ] image fullscreen
-- [ ] Paragraph and text color
 - [ ] Real data in Hero section
 - [ ] Add animations
 - [ ] Hover states
