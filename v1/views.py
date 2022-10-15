@@ -63,7 +63,7 @@ def getPage(request, slug):
     global notion
     try:
         allArticles = requests.get(
-            url=os.path.join(config.get("REACT_APP_BACKEND_URI"), "get-database"),
+            url=os.path.join(config.get("REACT_APP_BACKEND_URI"), "get-database/"),
             headers={
                 "Content-Type": "application/json",
                 "Accept": "application/json",
@@ -78,7 +78,7 @@ def getPage(request, slug):
             data={
                 "error": "could not call the API at this moment.",
             },
-            status=status.HTTP_503_SERVICE_UNAVAILABLE,
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR,
             content_type="application/json",
         )
     else:

@@ -127,7 +127,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
     - [X] Have added loading attribute to the img tag
 - [X] Post open, shows loading for a split second but the content still takes time to load - switched to useState instead of Suspense
 - [X] Error when individual post url open instead of opening from home page - need to fix this so i can share articles
-    - [ ] URls are conflicting between react router and django urls hence the post not opening
+    - [ ] URls are conflicting between react router and django urls hence the post not opening - missing a / while calling get-database in the get-page function
 - [X] After above fix add sharing option in navbar
     - [ ] Make navbar appear on scroll up
     - [X] Add different platform to share to, linkedin, twitter, copy to clipboard etc
