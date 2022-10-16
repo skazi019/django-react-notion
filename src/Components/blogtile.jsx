@@ -32,7 +32,7 @@ export default function BlogTile({ article }) {
             <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">{formattedDate}</p>
             <h1 className="font-semibold text-xl dark:text-white">{article.properties.title.title[0].plain_text}</h1>
             <p className="">{article.properties.summary.rich_text[0].text.content}</p>
-            <Tags tags={multiTags} />
+            <Tags tags={multiTags} extraClasses='mt-2' />
         </div>
     )
 };

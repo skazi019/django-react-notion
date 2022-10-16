@@ -18,12 +18,10 @@
 - [Run it Locally](#run-it-locally)
   - [Backend](#backend)
   - [Frontend](#frontend)
+- [Port backend to another language](#port-backend-to-another-language)
 - [Perparing for Production](#perparing-for-production)
 - [Deployment](#deployment)
 - [Unsuppported Blocks](#unsuppported-blocks)
-- [TODO](#todo)
-    - [Functional](#functional)
-    - [Visual](#visual)
 
 <br />
 
@@ -98,6 +96,9 @@ I use it everyday from planning and todos to notes and content and now, even blo
     ```
 
 
+# Port backend to another language
+Porting backend is really simple, just refer to `v1/views.py`. The code is simple enough to re-write in any language you want.
+
 # Perparing for Production
 
 # Deployment
@@ -109,49 +110,3 @@ I use it everyday from planning and todos to notes and content and now, even blo
  - Table
  - File
  - Numrical nested lists
-
-# TODO
-### Functional
-- [X] handle the lists ul and ol
-- [X] handle has_children for block in python code so i can show childrens in nested lists or toggle 
-- [X] Lists nesting problem; Nesting problem in general
-- [X] Add a search bar
-- [ ] ~~Sort filter by date~~
-- [X] tab filter by tags
-    - [X] tags are populating and working correctly
-    - [ ] Make the filters act like AND gate
-- [ ] ~~paginate the blogs lists~~
-- [X] previous post is there in dom when loading new post
-- [X] Error response in backend
-- [X] Lazy load images
-    - [X] Have added loading attribute to the img tag
-- [X] Post open, shows loading for a split second but the content still takes time to load - switched to useState instead of Suspense
-- [X] Error when individual post url open instead of opening from home page - need to fix this so i can share articles
-    - [ ] URls are conflicting between react router and django urls hence the post not opening - missing a / while calling get-database in the get-page function
-- [X] After above fix add sharing option in navbar
-    - [X] Make navbar appear on scroll up
-    - [X] Add different platform to share to, linkedin, twitter, copy to clipboard etc
-- [ ] Add analytics
-- [X] Tags dont load in the tag filter when the page is first loaded - https://docs.pmnd.rs/zustand/recipes/recipes#read-from-state-in-actions
-- [X] Dark mode
-
-### Visual
-- [X] make proper padding for all blocks
-- [X] Display video(youtube, loom etc)
-- [X] anchor style 
-- [X] custom pulse loader for blog list and pos
-- [X] Date in blog list view
-- [X] mobile responsiveness [ ](make back button show on scoll)
-- [X] Navbar (back button)
-- [X] Add tags in the blog list view
-- [X] Fix the width of the list when searching; the width collapses when the article isnt wide enough or no articles present
-- [X] Width collapses in mobile when the article is small in length
-- [X] Color in paragraph
-- [X] Rough anotations for highlighting
-- [X] Footer
-- [X] Real data in Hero section
-- [ ] image fullscreen
-- [ ] Add animations
-- [ ] ~~Hover states~~
-- [ ] Update the Logo in title bar?
-- [ ] Optimise the meta tag for seo
