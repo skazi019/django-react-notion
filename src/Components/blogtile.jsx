@@ -21,6 +21,7 @@ export default function BlogTile({ article }) {
             if (!containsObject(tag, allTags) && !containsObject(tag, tagFilter)) {
                 setAllTags([...allTags, tag])
             }
+            return true
         })
     };
 

@@ -5,7 +5,7 @@ export default function Todo(props) {
     const text = props.text;
     const id = props.id;
     const checked = props.checked;
-    const extraClasses = props.extraClasses;
+    // const extraClasses = props.extraClasses;
 
     return (
         <div>

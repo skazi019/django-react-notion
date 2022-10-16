@@ -5,6 +5,7 @@ import { renderBlock } from "./renderblock";
 import PostLoader from "./postloader";
 import Navbar from "./navbar";
 import { getFormattedDate } from "./utilities";
+import Footer from "./footer";
 
 export default function Post({ page }) {
 
@@ -55,7 +56,7 @@ export default function Post({ page }) {
 
 
     return (
-        <main className="transition min-h-screen dark:bg-neutral-800 dark:text-gray-200">
+        <main className="transition min-h-screen pb-8 dark:bg-neutral-800 dark:text-gray-200">
             <Navbar />
             <section>
                 <article className='py-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
@@ -82,6 +83,7 @@ export default function Post({ page }) {
                     }
                 </article>
             </section>
+            <Footer />
         </main>
     );
 }

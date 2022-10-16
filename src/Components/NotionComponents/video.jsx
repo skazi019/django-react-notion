@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Video(props) {
     const src = props.src;
-    const caption = props.caption;
+    // const caption = props.caption;
 
     return (
         <>

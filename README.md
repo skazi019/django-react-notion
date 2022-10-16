@@ -147,9 +147,11 @@ I use it everyday from planning and todos to notes and content and now, even blo
 - [X] Fix the width of the list when searching; the width collapses when the article isnt wide enough or no articles present
 - [X] Width collapses in mobile when the article is small in length
 - [X] Color in paragraph
+- [X] Rough anotations for highlighting
+- [X] Footer
+- [X] Real data in Hero section
 - [ ] image fullscreen
-- [ ] Real data in Hero section
 - [ ] Add animations
-- [ ] Hover states
+- [ ] ~~Hover states~~
 - [ ] Update the Logo in title bar?
 - [ ] Optimise the meta tag for seo
