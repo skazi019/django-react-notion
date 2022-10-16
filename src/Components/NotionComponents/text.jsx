@@ -66,7 +66,7 @@ export default function Text(props) {
                                 className={`
                                 ${extraClasses} 
                                 ${bold ? 'font-semibold' : ''} 
-                                ${code ? 'bg-gray-200 px-1 rounded text-red-500 dark:bg-gray-300 dark:text-red-500' : ''} 
+                                ${code ? 'bg-gray-200 px-1 rounded text-red-500 dark:bg-stone-200 dark:text-red-500' : ''} 
                                 ${italic ? 'italic' : ''}
                                 `}
                             >

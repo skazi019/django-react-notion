@@ -31,7 +31,7 @@ export default function DarkMode() {
 
 
     return (
-        <div>
+        <div className='mt-2 md:mt-0'>
             {
                 !mode ?
                     (

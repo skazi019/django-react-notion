@@ -45,8 +45,8 @@ export default function TagFilter() {
                         }
                     </button>
 
-                    <div className={`${filterDisplay} absolute w-64 top-6 right-0 bg-white border border-gray-200 rounded dark:border-gray-600`}>
-                        <div className='flex flex-row flex-wrap gap-2 bg-amber-100/50 border-b border-gray-200 p-2 dark:bg-slate-800 dark:border-gray-600'>
+                    <div className={`${filterDisplay} absolute w-64 top-6 right-0 bg-white border border-gray-200 rounded dark:border-gray-800`}>
+                        <div className='flex flex-row flex-wrap gap-2 bg-slate-100/50 border-b border-gray-200 p-2 dark:bg-slate-800 dark:border-gray-800'>
                             {
                                 tagFilter.length > 0 ?
                                     (
