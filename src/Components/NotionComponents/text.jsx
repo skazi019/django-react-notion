@@ -1,34 +1,15 @@
 import React from 'react'
 import EmptyLine from './emptyline';
 import { RoughNotation } from 'react-rough-notation'
-import { colorToClass } from './colors';
+import { getNotationColor } from './colors';
+import { useSettingStore } from '../../store';
 
 export default function Text(props) {
     const text = props.text;
     const extraClasses = props.extraClasses;
 
-
-    const notationColorToClass = {
-        "default": "#94a3b8",
-        "gray": "#94a3b8",
-        "brown": "#fb923c",
-        "orange": "#fb923c",
-        "yellow": "#facc15",
-        "green": "#34d399",
-        "blue": "#67e8f9",
-        "purple": "#a78bfa",
-        "pink": "#f9a8d4",
-        "red": "#fb7185",
-        "gray_background": "#94a3b8",
-        "brown_background": "#fb923c",
-        "orange_background": "#fb923c",
-        "yellow_background": "#facc15",
-        "green_background": "#34d399",
-        "blue_background": "#67e8f9",
-        "purple_background": "#a78bfa",
-        "pink_background": "#f9a8d4",
-        "red_background": "#fb7185",
-    }
+    const mode = useSettingStore((state) => state.darkMode);
+    const notationColorToClass = getNotationColor(mode);
 
     if (!text) {
         return null;
@@ -51,7 +32,6 @@ export default function Text(props) {
                         )
                     }
                     else if (underline) {
-                        console.log(value)
                         return (
                             <RoughNotation type="underline" color={notationColorToClass[color]} padding={(0, 0)} strokeWidth={1} show={true} >
                                 {text.content}
@@ -83,9 +63,14 @@ export default function Text(props) {
                     else {
                         return (
                             <span id={id}
-                                className={`${extraClasses} ${bold ? 'font-semibold' : ''} ${code ? 'bg-gray-200 px-1 rounded text-red-500' : ''} ${italic ? 'italic' : ''}`}
+                                className={`
+                                ${extraClasses} 
+                                ${bold ? 'font-semibold' : ''} 
+                                ${code ? 'bg-gray-200 px-1 rounded text-red-500 dark:bg-gray-300 dark:text-red-500' : ''} 
+                                ${italic ? 'italic' : ''}
+                                `}
                             >
-                                {text.link ? <a href={text.link.url} target='_blank' rel="noreferrer" className='text-gray-400 underline underline-offset-2'>{text.content}</a> : text.content}
+                                {text.link ? <a href={text.link.url} target='_blank' rel="noreferrer" className='transition text-gray-400 underline underline-offset-2 hover:text-gray-200'>{text.content}</a> : text.content}
                             </span>
                         );
                     }

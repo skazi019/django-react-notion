@@ -52,7 +52,7 @@ export default function BlogPost(props) {
             {
                 isLoading ?
                     <main>
-                        <section className='my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
+                        <section className='transition my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
                             <PostLoader />
                         </section>
                     </main>

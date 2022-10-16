@@ -133,6 +133,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
     - [X] Add different platform to share to, linkedin, twitter, copy to clipboard etc
 - [ ] Add analytics
 - [X] Tags dont load in the tag filter when the page is first loaded - https://docs.pmnd.rs/zustand/recipes/recipes#read-from-state-in-actions
+- [X] Dark mode
 
 ### Visual
 - [X] make proper padding for all blocks

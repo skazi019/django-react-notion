@@ -1,6 +1,15 @@
 import create from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
+const settingsStore = (set) => ({
+    darkMode: true,
+    toggleDarkMode: () => {
+        set((state) => ({
+            darkMode: !state.darkMode
+        }))
+    }
+})
+
 const articleStore = (set) => ({
     articles: [],
     page: {},
@@ -74,6 +83,16 @@ const useArticleStore = create(
     )
 );
 const useFilterStore = create(devtools(filterstore));
+const useSettingStore = create(
+    devtools(
+        persist(
+            settingsStore,
+            {
+                name: 'settings-storage',
+            }
+        )
+    )
+);
 
 export default useArticleStore;
-export { useFilterStore };
+export { useFilterStore, useSettingStore };

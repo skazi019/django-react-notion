@@ -8,6 +8,14 @@ export const containsObject = (obj, list) => {
     return false;
 }
 
+export const getFormattedDate = (originalDate) => {
+    return new Intl.DateTimeFormat("en-GB", {
+        year: "numeric",
+        month: "long",
+        day: "2-digit"
+    }).format(originalDate);
+}
+
 export async function fetchAllArticles(setArticlesFunc) {
     fetch(process.env.REACT_APP_BACKEND_URI + '/get-database/',
         {

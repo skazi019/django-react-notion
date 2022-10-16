@@ -29,7 +29,7 @@ export default function Quote(props) {
 
     return (
         <div className="px-8 my-8">
-            <blockquote id={id} className={`p-2 text-xl italic text-zinc-500 ${colorToClass[color]}`}>
+            <blockquote id={id} className={`p-2 text-xl italic text-zinc-500 dark:text-zinc-300 ${colorToClass[color]}`}>
                 <Text text={text} extraClasses="pl-2" />
             </blockquote>
         </div>

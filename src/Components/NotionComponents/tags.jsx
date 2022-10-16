@@ -10,7 +10,7 @@ export default function Tags(props) {
     }
 
     return (
-        <div className='flex flex-row justify-start items-center gap-2 flex-wrap'>
+        <div className='transition flex flex-row justify-start items-center gap-2 flex-wrap'>
             {
                 tags.length > 0 ?
                     tags.map((tag, i) => (

@@ -26,7 +26,7 @@ export default function TagFilter() {
         <>
             <div className='flex flex-row justify-start items-center gap-4'>
                 <div className='relative'>
-                    <button onClick={toggleTagFilterDisplay}>
+                    <button onClick={toggleTagFilterDisplay} className='outline-0'>
                         {
                             filterDisplay === 'hidden' ?
                                 (
@@ -45,8 +45,8 @@ export default function TagFilter() {
                         }
                     </button>
 
-                    <div className={`${filterDisplay} absolute w-64 top-6 right-0 bg-white border border-gray-200 rounded`}>
-                        <div className='flex flex-row flex-wrap gap-2 bg-amber-100/50 border-b border-gray-200 p-2'>
+                    <div className={`${filterDisplay} absolute w-64 top-6 right-0 bg-white border border-gray-200 rounded dark:border-gray-600`}>
+                        <div className='flex flex-row flex-wrap gap-2 bg-amber-100/50 border-b border-gray-200 p-2 dark:bg-slate-800 dark:border-gray-600'>
                             {
                                 tagFilter.length > 0 ?
                                     (
@@ -54,11 +54,11 @@ export default function TagFilter() {
                                     )
                                     :
                                     (
-                                        <p className='text-xs text-gray-500'>Select tags from below to filter articles</p>
+                                        <p className='text-xs text-gray-500 dark:text-gray-400'>Select tags from below to filter articles</p>
                                     )
                             }
                         </div>
-                        <div className='flex flex-row flex-wrap p-2 gap-2 bg-slate-100/30'>
+                        <div className='flex flex-row flex-wrap p-2 gap-2 bg-slate-100/30 dark:bg-slate-700'>
                             <Tags tags={allTags} callback={addTagToFilter} />
                         </div>
                     </div>

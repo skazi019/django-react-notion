@@ -27,17 +27,17 @@ export default function SearchBar() {
     return (
         <>
             <div className='flex  flex-row justify-start items-center gap-4'>
-                <button onClick={toggleBarDisplay}>
+                <button onClick={toggleBarDisplay} className='outline-0'>
                     {
                         barDisplay === 'hidden' ?
                             (
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 outline-0">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                 </svg>
                             )
                             :
                             (
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="invert" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 outline-0 stroke-gray-400 dark:stroke-white dark:fill-white">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                 </svg>
                             )
@@ -53,7 +53,7 @@ export default function SearchBar() {
                     id="search-bar"
                     onChange={inputHandler}
                     placeholder='Search . . .'
-                    className={`w-48 md:w-64 text-sm border-b-2 border-slate-800 px-2 outline-0 ${barDisplay}`}
+                    className={`${barDisplay} w-48 md:w-64 text-sm border-b-2 border-slate-800 px-2 outline-0 dark:bg-neutral-800 dark:border-gray-400`}
                 />
             </div>
         </>

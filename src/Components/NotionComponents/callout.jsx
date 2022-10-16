@@ -7,7 +7,7 @@ export default function Callout(props) {
     const color = props.color;
 
     return (
-        <div className={`mx-8 my-4 p-4 rounded-md ${colorToClass[color]}`}>
+        <div className={`transition mx-8 my-4 p-4 rounded-md ${colorToClass[color]}`}>
             <Text text={text} />
         </div>
     )
