@@ -50,7 +50,7 @@ export default function Post({ page }) {
             setBlocks([]);
             setSearchFilter('');
             setAllTags([]);
-            document.title = 'Kaushal Sharma Blog'
+            document.title = 'Kaushal Sharma\'s Blog'
         }
     }, [])
 

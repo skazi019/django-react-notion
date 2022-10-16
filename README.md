@@ -8,12 +8,13 @@
 - [Notion Blog](#notion-blog)
     - [Table of Contents](#table-of-contents)
 - [Motivation](#motivation)
+- [Features](#features)
 - [Why is backend required? Why not just build it in React?](#why-is-backend-required-why-not-just-build-it-in-react)
 - [Techstack](#techstack)
   - [Why React?](#why-react)
   - [Why Django?](#why-django)
   - [Why Notion?](#why-notion)
-  - [Main Challenges Faced?](#main-challenges-faced)
+- [Main Challenges Faced?](#main-challenges-faced)
     - [Nesting lists till the end(used recursion or DFS)](#nesting-lists-till-the-endused-recursion-or-dfs)
 - [Run it Locally](#run-it-locally)
   - [Backend](#backend)
@@ -30,6 +31,24 @@
 - I use notion everyday so it was best option for me instead of getting into a CMS or headless CMS
 - went through other notion page renderers like react-notion-x and react-notion but they each were opinionated on how they called the official APIs rather than using the APIs as is
 - I wanted to build it myself ;p
+
+<br />
+
+
+# Features
+- Dark Mode
+- Most notion blocks supported
+- Styles similar to notion but can be tweaked to your own taste
+- Search articles by 
+  - input
+  - tags
+- Share directly to
+  - Twitter
+  - WhatsApp
+  - Clipboard
+- Ease of use - Notion as a CMS
+- Analytics(google analytics)
+- Once deployed, no wrangling with code again
 
 <br />
 
@@ -54,11 +73,17 @@ I'm primaryly a python developer and have some expeirence with django and django
 
 Please note that you can use any backend you want, the backend code is fairly simple
 
+
 ## Why Notion?
 I use it everyday from planning and todos to notes and content and now, even blogging!
 
-## Main Challenges Faced?
+<br />
+
+# Main Challenges Faced?
+
 ### Nesting lists till the end(used recursion or DFS)
+
+<br />
 
 # Run it Locally
 ## Backend
@@ -95,6 +120,7 @@ I use it everyday from planning and todos to notes and content and now, even blo
     npm run start
     ```
 
+<br />
 
 # Port backend to another language
 Porting backend is really simple, just refer to `v1/views.py`. The code is simple enough to re-write in any language you want.
@@ -103,6 +129,8 @@ Porting backend is really simple, just refer to `v1/views.py`. The code is simpl
 
 # Deployment
 > Deployed on [fly.io](https://fly.io)
+
+<br />
 
 # Unsuppported Blocks
  - Columns

@@ -3,6 +3,7 @@ import profileImage from '../assets/images/Profile Photo - 5.png';
 import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
 import { useSettingStore } from '../store';
 import { getNotationColor } from './NotionComponents/colors';
+import ReactGA from "react-ga4";
 
 export default function Hero() {
 
@@ -13,6 +14,33 @@ export default function Hero() {
     const notationColorToClass = getNotationColor(mode);
 
     const bioRef = useRef();
+
+    const linkedInProfileVisit = () => {
+        ReactGA.event({
+            category: "Profile Visit",
+            action: "LinkedIn Profile Visit",
+            label: "LinkedIn Profile Visit",
+        });
+        return true
+    }
+
+    const twitterProfileVisit = () => {
+        ReactGA.event({
+            category: "Profile Visit",
+            action: "Twitter Profile Visit",
+            label: "Twitter Profile Visit",
+        });
+        return true
+    }
+
+    const mailtoClicked = () => {
+        ReactGA.event({
+            category: "Mail To Opened",
+            action: "Mail To Opened",
+            label: "Mail To Opened",
+        });
+        return true
+    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -43,11 +71,34 @@ export default function Hero() {
                 </RoughNotationGroup>
             </p>
             <div className='mt-2 flex flex-row justify-center items-center gap-2 text-sm text-gray-400'>
-                <a href="https://www.linkedin.com/in/kaushal-sharma-/" target='_blank' className='underline underline-offset-2' rel="noreferrer">LinkedIn</a>
+                <a
+                    href="https://www.linkedin.com/in/kaushal-sharma-/"
+                    target='_blank'
+                    className='underline underline-offset-2'
+                    rel="noreferrer"
+                    onClick={linkedInProfileVisit}
+                >
+                    LinkedIn
+                </a>
                 |
-                <a href="https://twitter.com/Kaushal_Shawrma" target='_blank' className='underline underline-offset-2' rel="noreferrer">Twitter</a>
+                <a
+                    href="https://twitter.com/Kaushal_Shawrma"
+                    target='_blank'
+                    className='underline underline-offset-2'
+                    rel="noreferrer"
+                    onClick={twitterProfileVisit}
+                >
+                    Twitter
+                </a>
                 |
-                <a href="mailto:kaushal.sharma.0796@gmail.com" className='underline underline-offset-2' rel="noreferrer">Email</a>
+                <a
+                    href="mailto:kaushal.sharma.0796@gmail.com"
+                    className='underline underline-offset-2'
+                    rel="noreferrer"
+                    onClick={mailtoClicked}
+                >
+                    Email
+                </a>
             </div>
         </section >
     );

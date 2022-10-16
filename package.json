@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-ga4": "^1.4.1",
     "react-headroom": "^3.2.1",
     "react-loader-spinner": "^5.3.4",
     "react-rough-notation": "^1.0.3",
