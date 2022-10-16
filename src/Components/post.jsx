@@ -55,7 +55,7 @@ export default function Post({ page }) {
 
 
     return (
-        <main className="transition dark:bg-neutral-800 dark:text-gray-200">
+        <main className="transition min-h-screen dark:bg-neutral-800 dark:text-gray-200">
             <Navbar />
             <section>
                 <article className='py-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>

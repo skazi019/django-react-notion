@@ -10,13 +10,13 @@ export default function Tags(props) {
     }
 
     return (
-        <div className='transition flex flex-row justify-start items-center gap-2 flex-wrap'>
+        <div className='transition mt-2 flex flex-row justify-start items-center gap-2 flex-wrap'>
             {
                 tags.length > 0 ?
                     tags.map((tag, i) => (
                         <button
                             onClick={(event) => executeCallback(event, tag)}
-                            className={`${colorToClass[tag.color]} px-2 rounded text-xs`}
+                            className={`${colorToClass[tag.color]} px-2 rounded text-xs outline-0`}
                         >
                             {tag.name}
                         </button>

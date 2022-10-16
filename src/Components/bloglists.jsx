@@ -60,7 +60,6 @@ export default function BlogList() {
                     .filter((article) => applyTagFilter(article.properties.tags.multi_select, tagFilter))
                     .map((article, i) => {
                         return (
-
                             <Suspense fallback={<TileLoader />}>
                                 <Link key={i} to={article.properties.slug.rich_text[0].plain_text} className='my-4'>
                                     <BlogTile article={article} />
