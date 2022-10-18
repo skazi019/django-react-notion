@@ -40,15 +40,15 @@ export default function Hero() {
         return true
     }
 
-    useEffect(() => {
+    const startTextHighlighting = () => {
         setTimeout(() => {
             setShow(true);
         }, 1000);
-    }, []);
+    }
 
     return (
         <section className="mt-14 lg:mt-18 flex flex-col justify-center items-center px-6 sm:px-20 w-screen md:px-0 mx-auto md:w-lg md:max-w-2xl lg:w-xl lg:max-w-4xl dark:text-white">
-            <img src={profileImage} className='w-44 rounded-full' alt="profile image" />
+            <img src={profileImage} onLoad={startTextHighlighting} className='w-44 rounded-full' alt="profile image" />
             <h1 className="mt-4 text-4xl font-oswald font-semibold">Kaushal's Blog</h1>
             <p className='text-md mt-2 font-hind text-center'>A
                 <RoughNotationGroup show={show}>

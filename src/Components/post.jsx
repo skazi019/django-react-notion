@@ -43,8 +43,16 @@ export default function Post({ page }) {
             })
     }
 
+    function setMetaTagContent() {
+        const titleElement = document.querySelector('#meta-title');
+        const descriptionElement = document.querySelector('#meta-description');
+        titleElement.setAttribute("content", page.properties.title.title[0].plain_text);
+        descriptionElement.setAttribute("content", page.properties.summary.rich_text[0].plain_text);
+    }
+
     useEffect(() => {
         getBlocks(page.id);
+        setMetaTagContent();
 
         return () => {
             setBlocks([]);
