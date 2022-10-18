@@ -9,7 +9,15 @@ import ReactGA from "react-ga4";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 document.title = 'Kaushal Sharma\'s Blog'
-ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID);
+try {
+  setTimeout(() => {
+    ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID);
+    console.log('Analytics started successfully');
+  }, 3000);
+} catch (error) {
+  console.log('Error in analytics: ', error);
+
+}
 
 root.render(
   <React.StrictMode>

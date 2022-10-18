@@ -4,6 +4,7 @@ import Text from './text';
 export default function Bookmark(props) {
     const text = props.text;
     const url = props.url;
+    const fontType = props.fontType;
 
     return (
         <div className='my-4'>
@@ -11,7 +12,7 @@ export default function Bookmark(props) {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9" />
                 </svg>
-                <Text text={text} />
+                <Text text={text} fontType={fontType} />
             </a>
         </div>
 

@@ -29,9 +29,9 @@ export default function BlogTile({ article }) {
 
     return (
         <div className="flex flex-col justify-center items-left">
-            <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">{formattedDate}</p>
-            <h1 className="font-semibold text-xl dark:text-white">{article.properties.title.title[0].plain_text}</h1>
-            <p className="">{article.properties.summary.rich_text[0].text.content}</p>
+            <p className="text-sm font-hind font-semibold text-gray-500 dark:text-gray-400">{formattedDate}</p>
+            <h1 className="font-hind font-semibold text-xl dark:text-white">{article.properties.title.title[0].plain_text}</h1>
+            <p className="font-hind text-md">{article.properties.summary.rich_text[0].text.content}</p>
             <Tags tags={multiTags} extraClasses='mt-2' />
         </div>
     )

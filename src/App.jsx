@@ -15,8 +15,8 @@ export default function App() {
 
 
 	return (
-		<main className="min-h-screen w-screen dark:bg-neutral-800 dark:text-gray-200">
-			<section className="transition flex flex-col justify-center items-center pb-8">
+		<main className="min-h-screen w-screen transition duration-300 dark:bg-neutral-800 dark:text-gray-200">
+			<section className="flex flex-col justify-center items-center pb-8">
 				<div className="place-self-end p-4">
 					<DarkMode />
 				</div>

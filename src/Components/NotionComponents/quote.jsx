@@ -4,9 +4,10 @@ export default function Quote(props) {
     const text = props.text
     const id = props.id
     const color = props.color
+    const fontType = props.fontType;
 
     const colorToClass = {
-        "default": "border-l-4 border-gray-600",
+        "default": "border-l-4 border-slate-800",
         "gray": "border-l-4 border-gray-600",
         "brown": "border-l-4 border-amber-500",
         "orange": "border-l-4 border-orange-500",
@@ -29,8 +30,8 @@ export default function Quote(props) {
 
     return (
         <div className="px-8 my-8">
-            <blockquote id={id} className={`p-2 text-xl italic text-zinc-500 dark:text-zinc-300 ${colorToClass[color]}`}>
-                <Text text={text} extraClasses="pl-2" />
+            <blockquote id={id} className={`p-2 text-lg font-semibold italic text-zinc-500 dark:text-zinc-300 ${colorToClass[color]}`}>
+                <Text text={text} extraClasses="pl-2" fontType={fontType} />
             </blockquote>
         </div>
     );

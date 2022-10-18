@@ -1,28 +1,6 @@
 # Notion Blog
 
-> A simple blog built using Django RestFramework and React using Notion as a CMS
-
-<br />
-
-### Table of Contents
-- [Notion Blog](#notion-blog)
-    - [Table of Contents](#table-of-contents)
-- [Motivation](#motivation)
-- [Features](#features)
-- [Why is backend required? Why not just build it in React?](#why-is-backend-required-why-not-just-build-it-in-react)
-- [Techstack](#techstack)
-  - [Why React?](#why-react)
-  - [Why Django?](#why-django)
-  - [Why Notion?](#why-notion)
-- [Main Challenges Faced?](#main-challenges-faced)
-    - [Nesting lists till the end(used recursion or DFS)](#nesting-lists-till-the-endused-recursion-or-dfs)
-- [Run it Locally](#run-it-locally)
-  - [Backend](#backend)
-  - [Frontend](#frontend)
-- [Port backend to another language](#port-backend-to-another-language)
-- [Perparing for Production](#perparing-for-production)
-- [Deployment](#deployment)
-- [Unsuppported Blocks](#unsuppported-blocks)
+> A simple blog built using **Django** **RestFramework** and **React** using **Notion** as a CMS
 
 <br />
 
@@ -46,7 +24,7 @@
   - Twitter
   - WhatsApp
   - Clipboard
-- Ease of use - Notion as a CMS
+- Ease of publishing and styling - Notion as a CMS
 - Analytics(google analytics)
 - Once deployed, no wrangling with code again
 
@@ -65,8 +43,6 @@ Due to this there's not much to be done in the backend, just calling the officia
 # Techstack
 ## Why React?
 I'm currently learning react and being a beginner I wanted to build a real world project with it to learn and understand about its fundamentals as well as state management
-
-<br />
 
 ## Why Django?
 I'm primaryly a python developer and have some expeirence with django and django rest framework so that felt the optimum choice instead of learning node/express getting even more frustrated than I already am.

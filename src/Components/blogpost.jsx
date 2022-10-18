@@ -43,6 +43,7 @@ export default function BlogPost(props) {
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetchPage();
     }, [])
 
@@ -52,7 +53,7 @@ export default function BlogPost(props) {
             {
                 isLoading ?
                     <main>
-                        <section className='transition my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
+                        <section className='transition duration-300 my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
                             <PostLoader />
                         </section>
                     </main>

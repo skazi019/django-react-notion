@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "oswald";
+    src: url("./assets/fonts/Oswald/Oswald-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "oswald";
+    src: url("./assets/fonts/Oswald/Oswald-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "hind";
+    src: url("./assets/fonts/Hind_Siliguri/HindSiliguri-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "hind";
+    src: url("./assets/fonts/Hind_Siliguri/HindSiliguri-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "montserrat";
+    src: url("./assets/fonts/Montserrat/Montserrat-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "montserrat";
+    src: url("./assets/fonts/Montserrat/Montserrat-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "montserrat";
+    src: url("./assets/fonts/Montserrat/Montserrat-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "montserrat";
+    src: url("./assets/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf");
+    font-weight: 600;
+    font-style: italic;
+}

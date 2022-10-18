@@ -54,7 +54,7 @@ export default function TagFilter() {
                                     )
                                     :
                                     (
-                                        <p className='text-xs text-gray-500 dark:text-gray-400'>Select tags from below to filter articles</p>
+                                        <p className='font-hind text-xs text-gray-500 dark:text-gray-400'>Select tags from below to filter articles</p>
                                     )
                             }
                         </div>

@@ -14,7 +14,12 @@ module.exports = {
         'md': '48rem',
         'lg': '64rem',
         'xl': '80rem',
-      }
+      },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+        hind: ["Hind Siliguri", "sans-serif"],
+      },
     },
   },
   plugins: [],

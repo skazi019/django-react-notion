@@ -6,6 +6,7 @@ import { useSettingStore } from '../../store';
 
 export default function Text(props) {
     const text = props.text;
+    const fontType = props.fontType;
     const extraClasses = props.extraClasses;
 
     const mode = useSettingStore((state) => state.darkMode);
@@ -33,44 +34,64 @@ export default function Text(props) {
                     }
                     else if (underline) {
                         return (
-                            <RoughNotation type="underline" color={notationColorToClass[color]} padding={(0, 0)} strokeWidth={1} show={true} >
-                                {text.content}
-                            </RoughNotation>
+                            <span className={`${fontType}`}>
+                                <RoughNotation type="underline" color={notationColorToClass[color]} padding={(0, 0)} strokeWidth={1} show={true} >
+                                    {text.content}
+                                </RoughNotation>
+                            </span>
                         )
                     }
                     else if (color !== 'default' && !strikethrough) {
                         if (color.split('_')[1] === 'background') {
                             return (
-                                <RoughNotation className='mx-[2px]' type="highlight" color={notationColorToClass[color]} padding={(0, 0)} show={true}>
-                                    {text.content}
-                                </RoughNotation>
+                                <span className={`${fontType}`}>
+                                    <RoughNotation className='mx-[2px]' type="highlight" color={notationColorToClass[color]} padding={(0, 0)} show={true}>
+                                        {text.content}
+                                    </RoughNotation>
+                                </span>
                             )
                         } else {
                             return (
-                                <RoughNotation type="circle" color={notationColorToClass[color]} padding={(1, 0)} show={true}>
-                                    {text.content}
-                                </RoughNotation>
+                                <span className={`${fontType}`}>
+                                    <RoughNotation type="circle" color={notationColorToClass[color]} padding={(1, 0)} show={true}>
+                                        {text.content}
+                                    </RoughNotation>
+                                </span>
                             )
                         }
                     }
                     else if (strikethrough) {
                         return (
-                            <RoughNotation type="strike-through" color={notationColorToClass[color]} strokeWidth={1} show={true} >
-                                {text.content}
-                            </RoughNotation>
+                            <span className={`${fontType}`}>
+                                <RoughNotation type="strike-through" color={notationColorToClass[color]} strokeWidth={1} show={true} >
+                                    {text.content}
+                                </RoughNotation>
+                            </span>
                         )
                     }
                     else {
                         return (
                             <span id={id}
                                 className={`
+                                font-hind
+                                ${fontType}
                                 ${extraClasses} 
                                 ${bold ? 'font-semibold' : ''} 
                                 ${code ? 'bg-gray-200 px-1 rounded text-red-500 dark:bg-stone-200 dark:text-red-500' : ''} 
                                 ${italic ? 'italic' : ''}
                                 `}
                             >
-                                {text.link ? <a href={text.link.url} target='_blank' rel="noreferrer" className='transition text-gray-400 underline underline-offset-2 hover:text-gray-200'>{text.content}</a> : text.content}
+                                {text.link ?
+                                    <a
+                                        href={text.link.url}
+                                        target='_blank'
+                                        rel="noreferrer"
+                                        className={`${fontType} transition duration-300 font-hind text-gray-400 underline underline-offset-2 hover:text-gray-200`}
+                                    >
+                                        {text.content}
+                                    </a>
+                                    :
+                                    text.content}
                             </span>
                         );
                     }

@@ -11,19 +11,19 @@ export default function Tags(props) {
     }
 
     return (
-        <div className='transition flex flex-row justify-start items-center gap-2 flex-wrap'>
+        <div className='transition duration-300 flex flex-row justify-start items-center gap-2 flex-wrap'>
             {
                 tags.length > 0 ?
                     tags.map((tag, i) => (
                         <button
                             onClick={(event) => executeCallback(event, tag)}
-                            className={`${colorToClass[tag.color]} ${extraClasses} px-2 rounded text-xs outline-0`}
+                            className={`${colorToClass[tag.color]} ${extraClasses} px-2 rounded font-hind text-xs outline-0`}
                         >
                             {tag.name}
                         </button>
                     ))
                     :
-                    <p className='text-xs text-gray-300'>No tags to show</p>
+                    <p className='text-xs font-hind text-gray-300'>No tags to show</p>
             }
         </div>
     )

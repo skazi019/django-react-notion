@@ -38,7 +38,11 @@ export default function BlogList() {
             for (let i = 0; i < articleTags.length; i++) {
                 if (containsObject(articleTags[i], tagFilterList)) {
                     shouldFilter.push(true);
-                } else {
+                }
+                else {
+                    if (tagFilterList.length > 1) {
+                        return false;
+                    }
                     shouldFilter.push(false);
                 }
             }

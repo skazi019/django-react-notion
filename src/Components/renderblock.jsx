@@ -17,14 +17,14 @@ export const renderBlock = (block) => {
 
     switch (type) {
         case "paragraph":
-            return <Paragraph text={value.rich_text} />
+            return <Paragraph text={value.rich_text} fontType='font-hind' />
         case "heading_1":
         case "heading_2":
         case "heading_3":
             return <Heading text={value.rich_text} type={type} />
         case "bulleted_list_item":
         case "numbered_list_item":
-            return <List text={value.rich_text} type={type} children={children} />
+            return <List text={value.rich_text} type={type} children={children} fontType='font-hind' />
         case "to_do":
             return <Todo text={value.rich_text} id={id} checked={value.checked} />
         case "child_page":
@@ -43,7 +43,7 @@ export const renderBlock = (block) => {
         case "divider":
             return <hr key={id} />;
         case "quote":
-            return <Quote text={value.rich_text} id={id} color={value.color} />
+            return <Quote text={value.rich_text} id={id} color={value.color} fontType='font-montserrat' />
         case "code":
             const language = value.language;
             const code = value.rich_text[0].plain_text;
@@ -51,11 +51,11 @@ export const renderBlock = (block) => {
             return <Code language={language} code={code} caption={codeCaption} />
         case "bookmark":
             const href = value.url
-            return <Bookmark text={value.caption} url={href} />
+            return <Bookmark text={value.caption} url={href} fontType='font-montserrat' />
         case "column_list":
             return null
         case "callout":
-            return <Callout text={value.rich_text} color={value.color} />
+            return <Callout text={value.rich_text} color={value.color} fontType='font-montserrat' />
         default:
             return `❌ Unsupported block (${type === "unsupported" ? "unsupported by Notion API" : type
                 })`;

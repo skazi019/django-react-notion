@@ -53,7 +53,7 @@ export default function SearchBar() {
                     id="search-bar"
                     onChange={inputHandler}
                     placeholder='Search . . .'
-                    className={`${barDisplay} w-48 md:w-64 text-sm border-b-2 border-slate-800 px-2 outline-0 dark:bg-neutral-800 dark:border-gray-400`}
+                    className={`${barDisplay} w-48 md:w-64 font-hind text-sm border-b-2 border-slate-800 px-2 outline-0 dark:bg-neutral-800 dark:border-gray-400`}
                 />
             </div>
         </>

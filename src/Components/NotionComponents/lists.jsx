@@ -6,8 +6,9 @@ export default function List(props) {
     const text = props.text;
     const type = props.type;
     const children = props.children ? props.children : false;
+    const fontType = props.fontType;
 
-    const listTag = function (type, text) {
+    const listTag = function (type, text, font) {
 
         switch (type) {
             case 'numbered_list_item':
@@ -15,7 +16,7 @@ export default function List(props) {
                 return (
                     <ul className='list-disc'>
                         <li>
-                            <Text text={text} />
+                            <Text text={text} fontType={font} />
                         </li>
                         {
                             children ? (
@@ -36,7 +37,7 @@ export default function List(props) {
 
     return (
         <div className={`px-8`}>
-            {listTag(type, text)}
+            {listTag(type, text, fontType)}
         </div>
     );
 }

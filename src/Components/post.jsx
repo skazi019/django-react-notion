@@ -56,15 +56,15 @@ export default function Post({ page }) {
 
 
     return (
-        <main className="transition min-h-screen pb-8 dark:bg-neutral-800 dark:text-gray-200">
+        <main className="transition duration-300 min-h-screen pb-8 dark:bg-neutral-800 dark:text-gray-200">
             <Navbar />
-            <section>
+            <section className="pt-10">
                 <article className='py-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
-                    <p className="text-md text-gray-500 dark:text-gray-300">Kaushal's Blog</p>
-                    <h1 className="text-4xl font-semibold mt-4 dark:text-white">
-                        <Text text={page.properties.title.title} />
+                    <p className="text-sm text-gray-500 font-hind dark:text-gray-300">Kaushal's Blog</p>
+                    <h1 className="text-4xl font-oswald font-semibold mt-4 dark:text-white">
+                        {page.properties.title.title[0].plain_text}
                     </h1>
-                    <p className="text-md text-gray-500 mt-2 dark:text-gray-300">{displayDate}</p>
+                    <p className="text-sm font-hind text-gray-500 mt-2 dark:text-gray-300">{displayDate}</p>
                     {
                         !isLoading ?
                             (
