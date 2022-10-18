@@ -7,8 +7,8 @@ export default function Quote(props) {
     const fontType = props.fontType;
 
     const colorToClass = {
-        "default": "border-l-4 border-slate-800",
-        "gray": "border-l-4 border-gray-600",
+        "default": "border-l-4 border-gray-800 dark:border-gray-200",
+        "gray": "border-l-4 border-gray-800 dark:border-gray-200",
         "brown": "border-l-4 border-amber-500",
         "orange": "border-l-4 border-orange-500",
         "yellow": "border-l-4 border-yellow-500",

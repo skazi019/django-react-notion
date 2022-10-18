@@ -1,6 +1,6 @@
 
 export const colorToClass = {
-    "default": "bg-neutral-100 text-gray-800 dark:bg-neutral-600 dark: text-gray-100",
+    "default": "bg-neutral-100 text-gray-800 dark:bg-neutral-600 dark:text-gray-100",
     "gray": "bg-neutral-100 text-gray-800 dark:bg-neutral-600 dark:text-gray-100",
     "brown": "bg-amber-100 text-amber-500 dark:bg-amber-500 dark:text-amber-100",
     "orange": "bg-orange-100 text-orange-500 dark:bg-orange-500 dark:text-orange-100",
