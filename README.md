@@ -12,6 +12,8 @@
 
 <br />
 
+Here's what I've built with this - [kaushalsharma.in](https://kaushalsharma.in)
+
 
 # Features
 - Dark Mode
@@ -26,6 +28,7 @@
   - Twitter
   - WhatsApp
 - Once deployed, no wrangling with code again
+- Semantic HTML
 <!-- - [WIP]Discoverable by crawlers and search engines (prerendering using react-snap) -->
 
 <br />
