@@ -147,7 +147,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
-CORS_ALLOWED_ORIGINS.append(config.get("REACT_APP_BACKEND_URI"))
+CORS_ORIGIN_ALLOW_ALL = True

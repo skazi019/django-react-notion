@@ -7,16 +7,19 @@
     "react-dom": "^18.2.0",
     "react-ga4": "^1.4.1",
     "react-headroom": "^3.2.1",
+    "react-helmet": "^6.1.0",
     "react-loader-spinner": "^5.3.4",
     "react-rough-notation": "^1.0.3",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
+    "react-snap": "^1.10.0",
     "react-syntax-highlighter": "^15.5.0",
     "zustand": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

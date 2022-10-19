@@ -15,6 +15,8 @@
 
 # Features
 - Dark Mode
+- Analytics(google analytics 4)
+<!-- - [WIP]Discoverable by crawlers and search engines (prerendering using react-snap) -->
 - Most notion blocks supported
 - Styles similar to notion but can be tweaked to your own taste
 - Search articles by 
@@ -23,9 +25,7 @@
 - Share directly to
   - Twitter
   - WhatsApp
-  - Clipboard
 - Ease of publishing and styling - Notion as a CMS
-- Analytics(google analytics)
 - Once deployed, no wrangling with code again
 
 <br />

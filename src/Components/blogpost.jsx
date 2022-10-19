@@ -7,7 +7,6 @@ import PostLoader from './postloader';
 
 export default function BlogPost(props) {
     const data = useParams();
-    document.title = data.slug;
 
     const [isLoading, setLoading] = useState(true);
 
@@ -20,7 +19,6 @@ export default function BlogPost(props) {
 
     async function fetchPage() {
         if (articles.length < 1) {
-            console.log('Making page request')
             await fetch(process.env.REACT_APP_BACKEND_URI + '/get-page/' + data.slug,
                 {
                     method: "GET",
@@ -33,12 +31,12 @@ export default function BlogPost(props) {
             ).then(async (response) => {
                 const res = await response.json();
                 const result = res.page_properties;
-                setPage(result)
-                setLoading(false)
+                setPage(result);
+                setLoading(false);
             })
         } else {
-            getPageFromSlug(data.slug)
-            setLoading(false)
+            getPageFromSlug(data.slug);
+            setLoading(false);
         }
     }
 
@@ -52,11 +50,9 @@ export default function BlogPost(props) {
         <>
             {
                 isLoading ?
-                    <main>
-                        <section className='transition duration-300 my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
-                            <PostLoader />
-                        </section>
-                    </main>
+                    <section className='transition duration-300 my-20 px-6 md:px-0 mx-auto md:w-sm lg:w-md lg:max-w-4xl'>
+                        <PostLoader />
+                    </section>
                     :
                     <Post page={page} />
             }
