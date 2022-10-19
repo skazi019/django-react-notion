@@ -1,4 +1,4 @@
-# Notion Blog
+<h1 align="center">Notion Blog</h1>
 
 > A simple blog built using **Django** **RestFramework** and **React** using **Notion** as a CMS
 
@@ -16,7 +16,7 @@
 # Features
 - Dark Mode
 - Analytics(google analytics 4)
-<!-- - [WIP]Discoverable by crawlers and search engines (prerendering using react-snap) -->
+- Ease of publishing - Notion as a CMS
 - Most notion blocks supported
 - Styles similar to notion but can be tweaked to your own taste
 - Search articles by 
@@ -25,8 +25,8 @@
 - Share directly to
   - Twitter
   - WhatsApp
-- Ease of publishing and styling - Notion as a CMS
 - Once deployed, no wrangling with code again
+<!-- - [WIP]Discoverable by crawlers and search engines (prerendering using react-snap) -->
 
 <br />
 
@@ -57,11 +57,16 @@ I use it everyday from planning and todos to notes and content and now, even blo
 
 # Main Challenges Faced?
 
-### Nesting lists till the end(used recursion or DFS)
+## Nesting lists till the end(used recursion or DFS) -has_children problem
 
 <br />
 
 # Run it Locally
+## Notion
+- Visit [this](https://developers.notion.com/docs/getting-started) link and follow Step 1, 2, and 3 and accordingly change the value in the `env` file
+
+<br />
+
 ## Backend
 - Make sure you have [python3](https://www.python.org/) installed
 - Install `pipenv` 
