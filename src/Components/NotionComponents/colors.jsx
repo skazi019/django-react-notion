@@ -2,23 +2,23 @@
 export const colorToClass = {
     "default": "bg-neutral-100 text-gray-800 dark:bg-neutral-600 dark:text-gray-100",
     "gray": "bg-neutral-100 text-gray-800 dark:bg-neutral-600 dark:text-gray-100",
-    "brown": "bg-amber-100 text-amber-500 dark:bg-amber-500 dark:text-amber-100",
-    "orange": "bg-orange-100 text-orange-500 dark:bg-orange-500 dark:text-orange-100",
-    "yellow": "bg-yellow-100 text-yellow-500 dark:bg-yellow-500 dark:text-yellow-100",
-    "green": "bg-emerald-100 text-emerald-500 dark:bg-emerald-500 dark:text-emerald-100",
-    "blue": "bg-blue-100 text-blue-500 dark:bg-blue-500 dark:text-blue-100",
-    "purple": "bg-purple-100 text-purple-500 dark:bg-purple-500 dark:text-purple-100",
-    "pink": "bg-pink-100 text-pink-500 dark:bg-pink-500 dark:text-pink-100",
-    "red": "bg-red-100 text-red-500 dark:bg-red-500 dark:text-red-100",
+    "brown": "bg-amber-100 text-amber-500 dark:bg-amber-500/60 dark:text-amber-100",
+    "orange": "bg-orange-100 text-orange-500 dark:bg-orange-500/60 dark:text-orange-100",
+    "yellow": "bg-yellow-100 text-yellow-500 dark:bg-yellow-500/60 dark:text-yellow-100",
+    "green": "bg-emerald-100 text-emerald-500 dark:bg-emerald-500/60 dark:text-emerald-100",
+    "blue": "bg-blue-100 text-blue-500 dark:bg-blue-500/60 dark:text-blue-100",
+    "purple": "bg-purple-100 text-purple-500 dark:bg-purple-500/60 dark:text-purple-100",
+    "pink": "bg-pink-100 text-pink-500 dark:bg-pink-500/60 dark:text-pink-100",
+    "red": "bg-red-100 text-red-500 dark:bg-red-500/60 dark:text-red-100",
     "gray_background": "bg-neutral-100 text-gray-800 dark:bg-neutral-600 dark:text-gray-100",
-    "brown_background": "bg-amber-100 text-amber-500 dark:bg-amber-500 dark:text-amber-100",
-    "orange_background": "bg-orange-100 text-orange-500 dark:bg-orange-500 dark:text-orange-100",
-    "yellow_background": "bg-yellow-100 text-yellow-500 dark:bg-yellow-500 dark:text-yellow-100",
-    "green_background": "bg-emerald-100 text-emerald-500 dark:bg-emerald-500 dark:text-emerald-100",
-    "blue_background": "bg-blue-100 text-blue-500 dark:bg-blue-500 dark:text-blue-100",
-    "purple_background": "bg-purple-100 text-purple-500 dark:bg-purple-500 dark:text-purple-100",
-    "pink_background": "bg-pink-100 text-pink-500 dark:bg-pink-500 dark:text-pink-100",
-    "red_background": "bg-red-100 text-red-500 dark:bg-red-500 dark:text-red-100",
+    "brown_background": "bg-amber-100 text-amber-500 dark:bg-amber-500/60 dark:text-amber-100",
+    "orange_background": "bg-orange-100 text-orange-500 dark:bg-orange-500/60 dark:text-orange-100",
+    "yellow_background": "bg-yellow-100 text-yellow-500 dark:bg-yellow-500/60 dark:text-yellow-100",
+    "green_background": "bg-emerald-100 text-emerald-500 dark:bg-emerald-500/60 dark:text-emerald-100",
+    "blue_background": "bg-blue-100 text-blue-500 dark:bg-blue-500/60 dark:text-blue-100",
+    "purple_background": "bg-purple-100 text-purple-500 dark:bg-purple-500/60 dark:text-purple-100",
+    "pink_background": "bg-pink-100 text-pink-500 dark:bg-pink-500/60 dark:text-pink-100",
+    "red_background": "bg-red-100 text-red-500 dark:bg-red-500/60 dark:text-red-100",
 }
 
 export const getNotationColor = (mode) => {
@@ -26,20 +26,20 @@ export const getNotationColor = (mode) => {
         return {
             "default": "#94a3b8", //slate-400
             "gray": "#94a3b8", //slate-400
-            "brown": "#fdba74", //orange-300
-            "orange": "#fdba74", // orange-300
-            "yellow": "#fde047", // yellow-300
+            "brown": "#fb923c", //orange-300
+            "orange": "#fb923c", // orange-300
+            "yellow": "#eab308", // yellow-300
             "green": "#10b981", //emerald-500
-            "blue": "#06b6d4", //cyan-400
+            "blue": "#0891b2", //cyan-400
             "purple": "#8b5cf6", //purple-500
             "pink": "#f472b6", //pink-400
             "red": "#f43f5e", //rose-500
             "gray_background": "#94a3b8",
-            "brown_background": "#fdba74",
-            "orange_background": "#fdba74",
-            "yellow_background": "#fde047",
+            "brown_background": "#fb923c",
+            "orange_background": "#fb923c",
+            "yellow_background": "#eab308",
             "green_background": "#10b981",
-            "blue_background": "#06b6d4",
+            "blue_background": "#0891b2",
             "purple_background": "#8b5cf6",
             "pink_background": "#f472b6",
             "red_background": "#f43f5e",

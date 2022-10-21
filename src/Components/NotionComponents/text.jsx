@@ -45,7 +45,7 @@ export default function Text(props) {
                         if (color.split('_')[1] === 'background') {
                             return (
                                 <span className={`${fontType}`}>
-                                    <RoughNotation className='mx-[2px]' type="highlight" color={notationColorToClass[color]} padding={(0, 0)} show={true}>
+                                    <RoughNotation className='mx-[2px]' type="highlight" color={notationColorToClass[color]} show={true}>
                                         {text.content}
                                     </RoughNotation>
                                 </span>
@@ -53,7 +53,7 @@ export default function Text(props) {
                         } else {
                             return (
                                 <span className={`${fontType}`}>
-                                    <RoughNotation type="circle" color={notationColorToClass[color]} padding={(1, 0)} show={true}>
+                                    <RoughNotation type="circle" color={notationColorToClass[color]} padding={[5, 6]} show={true}>
                                         {text.content}
                                     </RoughNotation>
                                 </span>

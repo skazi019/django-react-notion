@@ -6,9 +6,9 @@ export default function Heading(props) {
     const type = props.type;
 
     const headingClasses = {
-        "heading_1": "text-3xl font-semibold pb-2 pt-4",
-        "heading_2": "text-2xl font-semibold pb-2 pt-4",
-        "heading_3": "text-xl font-semibold pb-2 pt-4",
+        "heading_1": "text-3xl font-semibold pb-2 pt-4 dark:text-white",
+        "heading_2": "text-2xl font-semibold pb-2 pt-4 dark:text-white",
+        "heading_3": "text-xl font-semibold pb-2 pt-4 dark:text-white",
     }
 
     const headingTag = function (type, text, classes) {

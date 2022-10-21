@@ -7,8 +7,8 @@ export default function Quote(props) {
     const fontType = props.fontType;
 
     const colorToClass = {
-        "default": "border-l-4 border-gray-800 dark:border-gray-200",
-        "gray": "border-l-4 border-gray-800 dark:border-gray-200",
+        "default": "border-l-4 border-gray-800 dark:border-white",
+        "gray": "border-l-4 border-gray-800 dark:border-white",
         "brown": "border-l-4 border-amber-500",
         "orange": "border-l-4 border-orange-500",
         "yellow": "border-l-4 border-yellow-500",
@@ -30,7 +30,7 @@ export default function Quote(props) {
 
     return (
         <div className="px-8 my-8">
-            <blockquote id={id} className={`p-2 text-lg font-semibold italic text-zinc-500 dark:text-zinc-300 ${colorToClass[color]}`}>
+            <blockquote id={id} className={`p-2 text-lg font-regular italic text-zinc-500 dark:text-neutral-100 ${colorToClass[color]}`}>
                 <Text text={text} extraClasses="pl-2" fontType={fontType} />
             </blockquote>
         </div>
