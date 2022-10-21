@@ -28,3 +28,4 @@ yarn-error.log*
 /staticfiles
 TODO.md
 .idea
+fly.toml
