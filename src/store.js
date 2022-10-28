@@ -71,7 +71,6 @@ const filterstore = (set, get) => ({
 })
 
 const useArticleStore = create(
-    devtools(
         persist(articleStore,
             // persisting articles so when the blog post page is refreshed it doesn't throw an error.
             // Because when page is refreshed the state it set back to initial state
@@ -80,18 +79,15 @@ const useArticleStore = create(
                 getStorage: () => sessionStorage, // (optional) by default, 'localStorage' is used
             }
         )
-    )
 );
-const useFilterStore = create(devtools(filterstore));
+const useFilterStore = create(filterstore);
 const useSettingStore = create(
-    devtools(
         persist(
             settingsStore,
             {
                 name: 'settings-storage',
             }
         )
-    )
 );
 
 export default useArticleStore;
